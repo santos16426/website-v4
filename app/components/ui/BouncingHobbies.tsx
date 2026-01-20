@@ -7,7 +7,7 @@ interface BouncingHobbyProps {
   hobby: string;
   emoji: string;
   index: number;
-  containerRef: React.RefObject<HTMLDivElement>;
+  containerRef: React.RefObject<HTMLDivElement | null>;
   containerSize: { width: number; height: number };
   isVisible: boolean;
 }
@@ -22,46 +22,86 @@ const BouncingHobby = ({ hobby, emoji, containerRef, containerSize, isVisible }:
     y: (Math.random() > 0.5 ? 1 : -1) * (0.3 + Math.random() * 0.4) 
   });
   const positionRef = useRef({ x: 0, y: 0 });
-  const elementSizeRef = useRef({ width: 0, height: 0 });
-  const animationFrameRef = useRef<number>();
+  const elementSizeRef = useRef({ width: 80, height: 32 }); // Default fallback
+  const animationFrameRef = useRef<number | undefined>(undefined);
+  const isInitializedRef = useRef(false);
 
-  // Measure element size once on mount
+  // Initialize position and measure element size
   useEffect(() => {
-    if (elementRef.current) {
-      const rect = elementRef.current.getBoundingClientRect();
-      elementSizeRef.current = { width: rect.width, height: rect.height };
-    }
-  }, []);
+    if (!elementRef.current || !containerRef.current) return;
+    if (containerSize.width === 0 || containerSize.height === 0) return;
+    if (isInitializedRef.current) return;
 
-  useEffect(() => {
-    if (!containerRef.current || !elementRef.current || isDragging || !isVisible) return;
-
-    const container = containerRef.current;
-    const element = elementRef.current;
-
-    // Initialize random starting position
-    const initPosition = () => {
-      if (containerSize.width > 0 && containerSize.height > 0 && elementSizeRef.current.width > 0) {
-        const startX = Math.random() * Math.max(0, containerSize.width - elementSizeRef.current.width);
-        const startY = Math.random() * Math.max(0, containerSize.height - elementSizeRef.current.height);
-        positionRef.current = { x: startX, y: startY };
-        x.set(startX);
-        y.set(startY);
+    // Measure element size
+    const measureElement = () => {
+      if (elementRef.current) {
+        const rect = elementRef.current.getBoundingClientRect();
+        if (rect.width > 0 && rect.height > 0) {
+          elementSizeRef.current = { width: rect.width, height: rect.height };
+          return true;
+        }
       }
+      return false;
     };
 
-    // Initialize after element is measured
-    if (elementSizeRef.current.width > 0) {
-      initPosition();
+    // Try to measure, use fallback if needed
+    const hasSize = measureElement();
+    const width = elementSizeRef.current.width;
+    const height = elementSizeRef.current.height;
+
+    // Initialize position
+    const maxX = Math.max(0, containerSize.width - width);
+    const maxY = Math.max(0, containerSize.height - height);
+    const startX = maxX > 0 ? Math.random() * maxX : 0;
+    const startY = maxY > 0 ? Math.random() * maxY : 0;
+    
+    positionRef.current = { x: startX, y: startY };
+    x.set(startX);
+    y.set(startY);
+    isInitializedRef.current = true;
+
+    // If element wasn't measured, try again after a delay
+    if (!hasSize) {
+      setTimeout(() => {
+        if (elementRef.current) {
+          const rect = elementRef.current.getBoundingClientRect();
+          if (rect.width > 0 && rect.height > 0) {
+            elementSizeRef.current = { width: rect.width, height: rect.height };
+          }
+        }
+      }, 100);
+    }
+  }, [containerSize, x, y, containerRef]);
+
+  // Animation loop
+  useEffect(() => {
+    // Always clean up any existing animation first
+    if (animationFrameRef.current !== undefined) {
+      cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = undefined;
     }
 
+    if (!containerRef.current || !elementRef.current) return;
+    if (containerSize.width === 0 || containerSize.height === 0) return;
+    if (!isInitializedRef.current) return;
+    if (isDragging || !isVisible) return;
+
+    let isRunning = true;
+
     const animate = () => {
-      if (!containerRef.current || !elementRef.current || isDragging || !isVisible) return;
+      if (!isRunning) return;
+      
+      // Check if we should continue animating
+      if (!containerRef.current || !elementRef.current || isDragging || !isVisible) {
+        animationFrameRef.current = undefined;
+        isRunning = false;
+        return;
+      }
 
       let newX = positionRef.current.x + velocityRef.current.x;
       let newY = positionRef.current.y + velocityRef.current.y;
 
-      // Bounce off horizontal edges (using cached container size)
+      // Bounce off horizontal edges
       if (newX <= 0) {
         newX = 0;
         velocityRef.current.x = Math.abs(velocityRef.current.x);
@@ -83,31 +123,37 @@ const BouncingHobby = ({ hobby, emoji, containerRef, containerSize, isVisible }:
       x.set(newX);
       y.set(newY);
 
-      animationFrameRef.current = requestAnimationFrame(animate);
-    };
-
-    if (isVisible && elementSizeRef.current.width > 0) {
-      animationFrameRef.current = requestAnimationFrame(animate);
-    }
-
-    return () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
+      if (isRunning) {
+        animationFrameRef.current = requestAnimationFrame(animate);
       }
     };
-  }, [containerRef, x, y, isDragging, isVisible, containerSize]);
+
+    // Start animation
+    animationFrameRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      isRunning = false;
+      if (animationFrameRef.current !== undefined) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = undefined;
+      }
+    };
+  }, [containerRef, isDragging, isVisible, containerSize]);
 
   const handleDragStart = () => {
     setIsDragging(true);
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = undefined;
     }
   };
 
   const handleDragEnd = () => {
     setIsDragging(false);
     // Update position ref from current motion values
-    positionRef.current = { x: x.get(), y: y.get() };
+    if (elementRef.current) {
+      positionRef.current = { x: x.get(), y: y.get() };
+    }
   };
 
   return (
@@ -163,8 +209,10 @@ const BouncingHobbies = ({ hobbies }: BouncingHobbiesProps) => {
       }
     };
 
+    // Initial measurement
     updateSize();
 
+    // Watch for resize
     const resizeObserver = new ResizeObserver(updateSize);
     resizeObserver.observe(containerRef.current);
 
