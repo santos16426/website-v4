@@ -1,0 +1,411 @@
+{
+  "about": {
+    "name": "Billy Joe Santos",
+    "title": "Software Developer",
+    "subTitle": "I develop high-performance web experiences from idea to launch.",
+    "description": "a Software Engineer from the Philippines. My expertise lies in crafting websites and mobile apps that seamlessly blend creativity with functionality, catering to the needs of various brands and agencies.",
+    "quote": "Make your vision your reality",
+    "exp_year": "7",
+    "address": "Quezon City, Philippines",
+    "phoneNumber": "+63-976-399-2426",
+    "contactEmail": "santos16426@gmail.com",
+    "music": "Indie Rock, Electronic",
+    "hobby": "Photography, Gaming",
+    "hobbies": [
+      { "name": "Gaming", "emoji": "🎮" },
+      { "name": "Photography", "emoji": "📸" },
+      { "name": "Gym", "emoji": "💪" },
+      { "name": "Running", "emoji": "🏃" },
+      { "name": "Hiking", "emoji": "🥾" },
+      { "name": "Swimming", "emoji": "🏊" },
+      { "name": "Reading", "emoji": "📚" },
+      { "name": "Cooking", "emoji": "👨‍🍳" },
+      { "name": "Traveling", "emoji": "✈️" },
+      { "name": "Cycling", "emoji": "🚴" }
+    ],
+    "avatar": {
+      "public_id": "",
+      "url": "https://scontent.fmnl4-4.fna.fbcdn.net/v/t39.30808-6/612068682_10229607981295682_6080860891770249729_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=hykyeVpNQ1UQ7kNvwGzLUzF&_nc_oc=AdmalRE4UmgIhTsrJL6pQo9CFP3YIeLMkLgiXwSLSjIYmlMM3VWSWZjMVQez1rV1HrQ1YiiRf_XPgNP3rUJ0_zZJ&_nc_zt=23&_nc_ht=scontent.fmnl4-4.fna&_nc_gid=xZn5_XHqOSB1sou483oKug&oh=00_Afpp1-eAbm1TVP3gbs4DspfXizN33_yKCZ-_b7m5jKf_WQ&oe=6974FF1E"
+    },
+    "alternateAvatars": [
+      {
+        "public_id": "",
+        "url": "https://scontent.fmnl4-4.fna.fbcdn.net/v/t39.30808-6/612068682_10229607981295682_6080860891770249729_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=hykyeVpNQ1UQ7kNvwGzLUzF&_nc_oc=AdmalRE4UmgIhTsrJL6pQo9CFP3YIeLMkLgiXwSLSjIYmlMM3VWSWZjMVQez1rV1HrQ1YiiRf_XPgNP3rUJ0_zZJ&_nc_zt=23&_nc_ht=scontent.fmnl4-4.fna&_nc_gid=xZn5_XHqOSB1sou483oKug&oh=00_Afpp1-eAbm1TVP3gbs4DspfXizN33_yKCZ-_b7m5jKf_WQ&oe=6974FF1E"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "company_name": "IT Group Inc.",
+      "summary": "",
+      "sequence": 1,
+      "startDate": "2018",
+      "endDate": "2018",
+      "jobTitle": "Implementation Engineer",
+      "jobLocation": "Quezon City, Philippines",
+      "bulletPoints": [
+        "Worked on NetSuite projects involving strategy and implementation",
+        "Applied manual testing to all projects"
+      ],
+      "forEducation": false,
+      "enabled": true,
+      "_id": "job1"
+    },
+    {
+      "company_name": "Whitecloak Technologies Inc.",
+      "summary": "",
+      "sequence": 2,
+      "startDate": "2018",
+      "endDate": "2021",
+      "jobTitle": "Associate Software Engineer",
+      "jobLocation": "Pasig, Philippines",
+      "bulletPoints": [
+        "Developed new user-facing features",
+        "Build reusable code and libraries",
+        "Developed mobile app and web applications",
+        "Optimized application for maximum speed and scalability",
+        "Implemented Search Engine Optimization"
+      ],
+      "forEducation": false,
+      "enabled": true,
+      "_id": "job2"
+    },
+    {
+      "company_name": "KargaX",
+      "summary": "",
+      "sequence": 3,
+      "startDate": "2021",
+      "endDate": "2021",
+      "jobTitle": "Freelance Software Engineer",
+      "jobLocation": "Philippines",
+      "bulletPoints": [
+        "Developed responsive web applications",
+        "Implemented content based applications",
+        "Developed new user-facing features",
+        "Implemented Search Engine Optimization"
+      ],
+      "forEducation": false,
+      "enabled": true,
+      "_id": "job3"
+    },
+    {
+      "company_name": "Exploretale",
+      "summary": "",
+      "sequence": 4,
+      "startDate": "2022",
+      "endDate": "2022",
+      "jobTitle": "Freelance Software Engineer",
+      "jobLocation": "Philippines",
+      "bulletPoints": [
+        "Developed responsive web applications",
+        "Implemented content based applications",
+        "Developed new user-facing features",
+        "Implemented Search Engine Optimization"
+      ],
+      "forEducation": false,
+      "enabled": true,
+      "_id": "job4"
+    },
+    {
+      "company_name": "Cognizant Softvision",
+      "summary": "",
+      "sequence": 5,
+      "icon": {
+        "public_id": "portfolio3/1710357917833-0mic4.png",
+        "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357917833-0mic4.png"
+      },
+      "startDate": "2021",
+      "endDate": "Present",
+      "jobTitle": "Software Engineer",
+      "jobLocation": "Makati, Philippines",
+      "bulletPoints": [
+        "Optimized and improved legacy code bases.",
+        "Built reusable components using React Hooks. Used Material UI/TailwindCSS/Bootstrap for the design framework",
+        "Created multiple queries using GraphQL",
+        "Developed endpoints using SpringBoot"
+      ],
+      "forEducation": false,
+      "enabled": true,
+      "_id": "job5"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Javascript",
+      "sequence": 1,
+      "_id": "skill1"
+    },
+    {
+      "name": "ReactJS",
+      "sequence": 2,
+      "_id": "skill2"
+    },
+    {
+      "name": "NextJS",
+      "sequence": 3,
+      "_id": "skill3"
+    },
+    {
+      "name": "Tailwind",
+      "sequence": 4,
+      "_id": "skill4"
+    },
+    {
+      "name": "TypeScript",
+      "sequence": 5,
+      "_id": "skill5"
+    },
+    {
+      "name": "NodeJS",
+      "sequence": 6,
+      "_id": "skill6"
+    },
+    {
+      "name": "MongoDB",
+      "sequence": 7,
+      "_id": "skill7"
+    },
+    {
+      "name": "SpringBoot",
+      "sequence": 8,
+      "_id": "skill8"
+    },
+    {
+      "name": "Redux",
+      "sequence": 9,
+      "_id": "skill9"
+    },
+    {
+      "name": "GraphQL",
+      "sequence": 10,
+      "_id": "skill10"
+    },
+    {
+      "name": "Git",
+      "sequence": 11,
+      "_id": "skill11"
+    },
+    {
+      "name": "Github",
+      "sequence": 12,
+      "_id": "skill12"
+    },
+    {
+      "name": "Sass",
+      "sequence": 13,
+      "_id": "skill13"
+    },
+    {
+      "name": "PostgreSQL",
+      "sequence": 14,
+      "_id": "skill14"
+    },
+    {
+      "name": "Vercel",
+      "sequence": 15,
+      "_id": "skill15"
+    },
+    {
+      "name": "MySQL",
+      "sequence": 16,
+      "_id": "skill16"
+    },
+    {
+      "name": "Docker",
+      "sequence": 17,
+      "_id": "skill17"
+    },
+    {
+      "name": "Figma",
+      "sequence": 18,
+      "_id": "skill18"
+    },
+    {
+      "name": "CSS",
+      "sequence": 19,
+      "_id": "skill19"
+    },
+    {
+      "name": "HTML",
+      "sequence": 20,
+      "_id": "skill20"
+    }
+  ],
+  "social_handles": [
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/lucas.gif/",
+      "_id": "instagram"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/billy-santos/",
+      "_id": "linkedin"
+    },
+    {
+      "platform": "Codepen",
+      "url": "https://codepen.io/joe_lucas",
+      "_id": "codepen"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/joeee.lucas/",
+      "_id": "facebook"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Therapy Clinic Management System",
+      "alias": "therapy-clinic",
+      "shortDescription": "A comprehensive case study for therapy clinic management system. Streamlines patient records, appointments, and clinic operations with an intuitive interface.",
+      "githubUrl": "",
+      "liveUrl": "",
+      "_id": "therapy-clinic",
+      "image": {
+        "public_id": "therapy-clinic",
+        "url": "/projects/TherapyClinic.png"
+      },
+      "details": {
+        "type": "Case Study",
+        "projectDate": "2026",
+        "techStack": [
+          "NextJS",
+          "TypeScript",
+          "TailwindCSS",
+          "NodeJS"
+        ]
+      }
+    },
+    {
+      "name": "Real Estate",
+      "alias": "real-estate",
+      "shortDescription": "A modern real estate marketing platform designed to help property seekers discover their perfect home. Browse curated listings, explore detailed property information, and connect with trusted real estate professionals—all in one seamless experience.",
+      "githubUrl": "https://github.com/santos16426/real-estate",
+      "liveUrl": "https://epicestate.vercel.app/",
+      "_id": "real-estate",
+      "image": {
+        "public_id": "real-estate",
+        "url": "/projects/RealEstate.png"
+      },
+      "details": {
+        "type": "Property Finder",
+        "projectDate": "2024",
+        "techStack": [
+          "ReactJS",
+          "TypeScript",
+          "TailwindCSS",
+          "GraphQL"
+        ]
+      }
+    },
+    {
+      "name": "Events Website",
+      "alias": "events-website",
+      "shortDescription": "A beautiful events website for special occasions like christenings. Features elegant design and seamless user experience for event information and RSVP management.",
+      "githubUrl": "",
+      "liveUrl": "",
+      "_id": "events-website",
+      "image": {
+        "public_id": "events-website",
+        "url": "/projects/Tanya.png"
+      },
+      "details": {
+        "type": "Events Website (Christening)",
+        "projectDate": "2024",
+        "techStack": [
+          "ReactJS",
+          "TypeScript",
+          "TailwindCSS"
+        ]
+      }
+    },
+    {
+      "name": "Pomodoro",
+      "alias": "pomodoro",
+      "shortDescription": "A productivity-focused case study featuring a Pomodoro timer application. Helps users manage their time effectively using the proven Pomodoro Technique.",
+      "githubUrl": "",
+      "liveUrl": "",
+      "_id": "pomodoro",
+      "image": {
+        "public_id": "pomodoro",
+        "url": "/projects/pomodoro.png"
+      },
+      "details": {
+        "type": "Case Study",
+        "projectDate": "2023",
+        "techStack": [
+          "NextJS",
+          "TypeScript",
+          "TailwindCSS",
+          "GraphQL"
+        ]
+      }
+    },
+    {
+      "name": "Exploretale",
+      "alias": "exploretale",
+      "shortDescription": "A modern travel website designed to help travelers discover and explore new destinations. Built with cutting-edge web technologies for an immersive travel planning experience.",
+      "githubUrl": "",
+      "liveUrl": "",
+      "_id": "exploretale",
+      "image": {
+        "public_id": "exploretale",
+        "url": "/projects/Exploretale.png"
+      },
+      "details": {
+        "type": "Travel Website",
+        "projectDate": "2022",
+        "techStack": [
+          "ReactJS",
+          "TypeScript",
+          "TailwindCSS",
+          "GraphQL"
+        ]
+      }
+    },
+    {
+      "name": "Kargax",
+      "alias": "kargax",
+      "shortDescription": "A comprehensive trucking and logistics platform that streamlines freight management and delivery operations. Designed to optimize supply chain efficiency.",
+      "githubUrl": "",
+      "liveUrl": "",
+      "_id": "kargax",
+      "image": {
+        "public_id": "kargax",
+        "url": "/projects/Kargax.png"
+      },
+      "details": {
+        "type": "Trucking & Logistics",
+        "projectDate": "2021",
+        "techStack": [
+          "ReactJS",
+          "TypeScript",
+          "TailwindCSS",
+          "GraphQL"
+        ]
+      }
+    },
+    {
+      "name": "Budget Tracker",
+      "alias": "budget-tracker",
+      "shortDescription": "A personal finance management case study. Track expenses, manage budgets, and gain insights into your spending habits with this intuitive budgeting application.",
+      "githubUrl": "",
+      "liveUrl": "",
+      "_id": "budget-tracker",
+      "image": {
+        "public_id": "budget-tracker",
+        "url": "/projects/BudgetTracker.png"
+      },
+      "details": {
+        "type": "Case Study",
+        "projectDate": "Coming soon",
+        "techStack": [
+          "NextJS",
+          "TypeScript",
+          "TailwindCSS"
+        ]
+      },
+      "disabled": true
+    }
+  ]
+}
