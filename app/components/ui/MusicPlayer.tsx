@@ -116,7 +116,7 @@ const MusicPlayer = ({ youtubeUrl }: MusicPlayerProps) => {
     <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 p-4">
 
       {/* Main Content: Album Art and Info Column */}
-      <div className="flex items-center gap-4 grow h-full">
+      <div className="flex items-center gap-4 grow h-full flex-col md:flex-col lg:flex-row">
         {/* Spinning Vinyl Album Art - Bigger */}
         <div className="relative shrink-0">
           <motion.div

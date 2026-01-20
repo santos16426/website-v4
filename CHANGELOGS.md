@@ -52,6 +52,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Performance** - Optimized bouncing hobbies animation with visibility detection and cached container sizes
 - **BouncingHobbies Component** - Fixed TypeScript errors and animation frame reference issues in bouncing hobbies component
 - **Build Errors** - Resolved TypeScript compilation errors for animation frame refs and container ref types
+- **SlideIn Component** - Fixed className merging issue by correcting cn function parameter order
 
 ### Changed
 - **Gitignore** - Added `.cursor/` directory to gitignore to exclude Cursor IDE files
+- **Layout Structure** - Moved LoaderWrapper from Hero component to page level for better page-wide loading experience
+- **Responsive Design** - Improved mobile responsiveness across Hero, Experience, and MusicPlayer components
+- **Analytics Configuration** - Updated Umami website ID and site URL to production values

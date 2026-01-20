@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import StructuredData from "./components/StructuredData";
 import { Portfolio } from "./utils/interface";
+import LoaderWrapper from "./components/LoaderWrapper";
 
 export default async function Home() {
   const portfolio = (await import("./siteConfig.json")).default;
@@ -21,6 +22,8 @@ export default async function Home() {
 
   return (
     <main className="relative">
+      <LoaderWrapper subTitle={about.subTitle}>
+
       <StructuredData about={about} socialHandles={social_handles} />
       <Header social={social_handles} />
       <Hero about={about} />
@@ -29,6 +32,7 @@ export default async function Home() {
       <Projects projects={projects} />
       <Experience experience={experience} />
       <Contact email={about.contactEmail}/>
+      </LoaderWrapper>
     </main>
   );
 }

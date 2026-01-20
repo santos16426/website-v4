@@ -46,7 +46,7 @@ export const HoverImage = ({
 
   return (
     <MotionLink
-      href={"#contact"}
+      href={"#"}
       ref={ref}
       onMouseMove={handleMouseMove}
       initial="initial"
