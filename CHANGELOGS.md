@@ -50,3 +50,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - **Performance** - Optimized bouncing hobbies animation with visibility detection and cached container sizes
+- **BouncingHobbies Component** - Fixed TypeScript errors and animation frame reference issues in bouncing hobbies component
+- **Build Errors** - Resolved TypeScript compilation errors for animation frame refs and container ref types
+
+### Changed
+- **Gitignore** - Added `.cursor/` directory to gitignore to exclude Cursor IDE files
