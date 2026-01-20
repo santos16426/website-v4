@@ -14,7 +14,6 @@ const Hero = ({ about }: HeroProps) => {
       <Transition>
         <span className="blob size-1/2 absolute top-20 left-0 blur-[100px]" />
       </Transition>
-      <LoaderWrapper subTitle={about.subTitle}>
         <div className="relative h-full w-full">
           <div className="flex items-center justify-center flex-col h-full pb-10">
             <Transition>
@@ -26,7 +25,7 @@ const Hero = ({ about }: HeroProps) => {
                 className="rounded-full size-28 object-cover"
               />
             </Transition>
-            <div className="py-6 flex items-center flex-col">
+            <div className="py-6 flex items-center flex-col text-center">
               <h2 className="md:text-7xl text-4xl font-bold overflow-hidden">
                 <SlideIn>Hello! I&apos;m {about.name}</SlideIn>
               </h2>
@@ -42,7 +41,7 @@ const Hero = ({ about }: HeroProps) => {
               </p>
             </Transition>
             <Transition viewport={{ once: true }}>
-              <div className="flex flex-row items-start text-center max-xs:flex-col">
+              <div className="flex flex-col lg:flex-row items-start text-center max-xs:flex-col">
                 <div className="flex align-center justify-center gap-2">
                   <Link href="https://github.com/santos16426" className="key-position" target="_blank">
                     <Github className="key-tile p-4"/>
@@ -54,10 +53,10 @@ const Hero = ({ about }: HeroProps) => {
                     <Codepen className="key-tile p-4"/>
                   </Link>
                 </div>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center w-full">
                   <Link
                     href="#about"
-                    className=" key-position ml-2"
+                    className=" key-position ml-2 w-full"
                     onClick={(e) => {
                       e.preventDefault();
                       document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
@@ -70,7 +69,6 @@ const Hero = ({ about }: HeroProps) => {
             </Transition>
           </div>
         </div>
-      </LoaderWrapper>
     </section>
   );
 };

@@ -33,7 +33,7 @@ const Timeline = ({ experience }: ExperienceProps) => {
               <div className="md:text-5xl text-xl md:font-semibold flex-1">
                 {exp.company_name}
               </div>
-              <div className="max-md:text-sm max-md:flex flex-col text-foreground/50">
+              <div className="max-md:text-sm flex-row text-foreground/50 max-md:hidden">
                 <span className="italic">
                   {exp.startDate}
                 </span>
@@ -45,7 +45,7 @@ const Timeline = ({ experience }: ExperienceProps) => {
             </div>
             <div className="md:pl-12 py-2 text-foreground/50 max-md:text-sm flex items-center justify-between">
               <span>{exp.jobTitle}</span>
-              <span>{exp.jobLocation}</span>
+              <span className="max-md:hidden">{exp.jobLocation}</span>
             </div>
             <motion.div
               initial={{ height: 0 }}
