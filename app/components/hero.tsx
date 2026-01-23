@@ -4,11 +4,26 @@ import Link from "next/link";
 
 import { HeroProps } from "../utils/types";
 import { SlideIn, Transition } from "./ui/Transitions";
-import LoaderWrapper from "./LoaderWrapper";
 import { Codepen, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 const Hero = ({ about }: HeroProps) => {
+  const textRef = useRef(null);
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
+  useEffect(() => {
+    if (!textRef.current) return;
+
+    const observer = new ResizeObserver(([entry]) => {
+      setWidth(Math.round(entry.contentRect.width));
+      setHeight(Math.round(entry.contentRect.height));
+    });
+
+    observer.observe(textRef.current);
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <section className="h-dvh w-dvw overflow-hidden relative">
       <Transition>
@@ -29,8 +44,18 @@ const Hero = ({ about }: HeroProps) => {
               <h2 className="md:text-7xl text-4xl font-bold overflow-hidden">
                 <SlideIn>Hello! I&apos;m {about.name}</SlideIn>
               </h2>
-              <h1 className="md:text-7xl text-3xl overflow-hidden">
-                <SlideIn>{about.title}</SlideIn>
+              <h1 className="md:text-7xl text-3xl">
+                <SlideIn className="overflow-visible!">
+                  <span>Software </span>
+                  <span className="pulsating-title relative" ref={textRef}>
+                    <span className="developer-width w-1.5 h-1.5 bg-white absolute top-[-2px] left-[-2px]"/>
+                    <span className="developer-width w-1.5 h-1.5 bg-white absolute bottom-[-2px] left-[-2px]"/>
+                    <span className="developer-width w-1.5 h-1.5 bg-white absolute top-[-2px] right-[-2px]"/>
+                    <span className="developer-width w-1.5 h-1.5 bg-white absolute bottom-[-2px] right-[-2px]"/>
+                    Developer
+                    <span className="developer-width absolute -bottom-6 left-[46%] text-[10px] bg-slate-50 text-slate-950 p-1 rounded-xs">{width}x{height}</span>
+                  </span>
+                </SlideIn>
               </h1>
             </div>
             <Transition viewport={{ once: true }} className="w-full">
