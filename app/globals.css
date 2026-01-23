@@ -159,3 +159,51 @@ html {
     text-align: center;
     padding: 0 .5rem;
 }
+.pulsating-title {
+  display: inline-block;
+  border: 1px solid transparent;
+  position: relative;
+  animation:
+    spacingPulse 8s ease-in-out infinite,
+    showBorder 0.5s ease;
+
+  animation-delay: 1s, 2s;
+  animation-fill-mode: none, forwards;
+}
+.developer-width{
+  opacity: 0;
+  animation: showWidth 0.5s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes showWidth {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes showBorder {
+  to {
+    border-color:white;
+
+  }
+}
+@keyframes spacingPulse {
+  0% {
+    letter-spacing: normal;
+  }
+  15%{
+    letter-spacing: normal;
+  }
+  25% {
+    letter-spacing: 1.5px;
+  }
+  30%{
+    letter-spacing: 1.5px;
+  }
+  35%{
+    letter-spacing: 1.5px;
+  }
+  40%{
+    letter-spacing: normal;
+  }
+}
