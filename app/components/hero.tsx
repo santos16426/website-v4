@@ -44,13 +44,19 @@ const Hero = ({ about }: HeroProps) => {
               <div className="flex flex-col lg:flex-row items-start text-center max-xs:flex-col">
                 <div className="flex align-center justify-center gap-2">
                   <Link href="https://github.com/santos16426" className="key-position" target="_blank">
-                    <Github className="key-tile p-4"/>
+                    <p className="key-tile p-4">
+                      <Github size={32}/>
+                    </p>
                   </Link>
                   <Link href="https://www.linkedin.com/in/billy-santos" className="key-position" target="_blank">
-                    <Linkedin className="key-tile p-4"/>
+                    <p className="key-tile p-4">
+                      <Linkedin size={32}/>
+                    </p>
                   </Link>
                   <Link href="https://codepen.io/joe_lucas" className="key-position" target="_blank">
-                    <Codepen className="key-tile p-4"/>
+                    <p className="key-tile p-4">
+                      <Codepen size={32}/>
+                    </p>
                   </Link>
                 </div>
                 <div className="flex items-center justify-center w-full">
