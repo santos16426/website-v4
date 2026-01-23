@@ -258,6 +258,18 @@
       "name": "Therapy Clinic Management System",
       "alias": "therapy-clinic",
       "shortDescription": "A comprehensive case study for therapy clinic management system. Streamlines patient records, appointments, and clinic operations with an intuitive interface.",
+      "fullDescription": "This Therapy Clinic Management System is a full-stack web application designed to modernize healthcare facility operations. The system provides a centralized platform for managing patient information, scheduling appointments, tracking treatment progress, and handling administrative tasks. Built with modern web technologies, it offers a seamless experience for both healthcare providers and administrative staff, reducing paperwork and improving operational efficiency.",
+      "goalsAndMotivation": {
+        "introduction": "The primary goal of this project was to create a modern, efficient solution for therapy clinics struggling with outdated paper-based systems and fragmented digital tools. Many healthcare facilities still rely on manual processes that lead to scheduling conflicts, lost patient records, and administrative overhead.",
+        "goals": [
+          "Streamline patient management and reduce administrative burden",
+          "Improve appointment scheduling accuracy and reduce no-shows",
+          "Provide secure, HIPAA-compliant data storage",
+          "Offer an intuitive interface accessible to all staff members",
+          "Enable real-time updates and notifications for better coordination"
+        ],
+        "motivation": "Having worked with healthcare facilities in the past, I've witnessed firsthand the inefficiencies caused by outdated systems. This project was born from a desire to create a solution that could genuinely improve the daily operations of therapy clinics while maintaining the highest standards of data security and user experience."
+      },
       "githubUrl": "",
       "liveUrl": "",
       "_id": "therapy-clinic",
@@ -265,6 +277,44 @@
         "public_id": "therapy-clinic",
         "url": "/projects/TherapyClinic.png"
       },
+      "gallery": [
+        {
+          "public_id": "therapy-clinic-1",
+          "url": "/projects/TherapyClinic.png",
+          "description": "Main dashboard showing patient overview and upcoming appointments with a clean, intuitive interface"
+        },
+        {
+          "public_id": "therapy-clinic-2",
+          "url": "/projects/TherapyClinic.png",
+          "description": "Patient record management interface with secure data entry forms and comprehensive patient history"
+        },
+        {
+          "public_id": "therapy-clinic-3",
+          "url": "/projects/TherapyClinic.png",
+          "description": "Appointment scheduling calendar with drag-and-drop functionality and real-time availability updates"
+        }
+      ],
+      "features": [
+        "Patient record management with secure data storage",
+        "Appointment scheduling and calendar integration",
+        "Treatment progress tracking and history",
+        "User authentication and role-based access control",
+        "Responsive design for desktop and mobile devices",
+        "Real-time notifications for appointments and updates"
+      ],
+      "challenges": [
+        "Ensuring HIPAA compliance was one of the biggest challenges. I had to implement strict data encryption, access controls, and audit logging. I solved this by using industry-standard encryption protocols, implementing role-based access control (RBAC), and creating comprehensive audit trails for all data access.",
+        "Creating an intuitive interface that works for both technical and non-technical users required extensive user research and iterative design. I conducted interviews with clinic staff to understand their workflows and pain points, then designed the UI with clear visual hierarchy and minimal cognitive load.",
+        "Implementing real-time updates without compromising performance was tricky. I used WebSocket connections with connection pooling and implemented efficient data caching strategies to ensure smooth real-time updates even with multiple concurrent users."
+      ],
+      "demo": [
+        {
+          "type": "image",
+          "url": "/projects/TherapyClinic.png",
+          "caption": "Main dashboard showing patient overview and upcoming appointments"
+        }
+      ],
+      "outro": "Building this Therapy Clinic Management System was a rewarding experience that taught me a lot about healthcare technology requirements and the importance of user-centered design. The project reinforced my belief that well-designed software can significantly improve daily operations in any industry.\n\nWhile this is a case study, the architecture and design patterns used here are production-ready and could be extended to support additional features like billing, insurance integration, and telemedicine capabilities.",
       "details": {
         "type": "Case Study",
         "projectDate": "2026",
@@ -280,6 +330,18 @@
       "name": "Real Estate",
       "alias": "real-estate",
       "shortDescription": "A modern real estate marketing platform designed to help property seekers discover their perfect home. Browse curated listings, explore detailed property information, and connect with trusted real estate professionals—all in one seamless experience.",
+      "fullDescription": "EpicEstate is a comprehensive real estate platform that revolutionizes the property search experience. Built with modern web technologies, it provides users with an intuitive interface to browse properties, view detailed listings, and connect with real estate agents. The platform features advanced search filters, interactive maps, and a seamless user experience that makes finding the perfect property effortless.",
+      "goalsAndMotivation": {
+        "introduction": "The real estate market is increasingly digital, but many platforms still offer cluttered interfaces and poor user experiences. I wanted to create a modern, clean platform that prioritizes user experience and makes property searching enjoyable rather than frustrating.",
+        "goals": [
+          "Create an intuitive property search experience with advanced filtering",
+          "Implement interactive maps for location-based property discovery",
+          "Build a responsive design that works seamlessly on all devices",
+          "Integrate GraphQL for efficient data fetching and real-time updates",
+          "Provide detailed property information with high-quality images"
+        ],
+        "motivation": "Having experienced the frustration of using outdated real estate platforms, I was motivated to build something better. This project allowed me to combine my passion for clean UI/UX design with modern web technologies to create a platform that truly serves property seekers."
+      },
       "githubUrl": "https://github.com/santos16426/real-estate",
       "liveUrl": "https://epicestate.vercel.app/",
       "_id": "real-estate",
@@ -287,6 +349,37 @@
         "public_id": "real-estate",
         "url": "/projects/RealEstate.png"
       },
+      "gallery": [
+        {
+          "public_id": "real-estate-1",
+          "url": "/projects/RealEstate.png",
+          "description": "Homepage featuring featured properties and search functionality"
+        },
+        {
+          "public_id": "real-estate-2",
+          "url": "/projects/RealEstate.png",
+          "description": "Property listing page with detailed information and image gallery"
+        },
+        {
+          "public_id": "real-estate-3",
+          "url": "/projects/RealEstate.png",
+          "description": "Interactive map view showing property locations and filters"
+        }
+      ],
+      "features": [
+        "Advanced property search with multiple filters",
+        "Interactive map integration for location-based browsing",
+        "Detailed property listings with high-resolution images",
+        "Responsive design for mobile and desktop",
+        "GraphQL API for efficient data fetching",
+        "Real-time property updates and availability"
+      ],
+      "challenges": [
+        "Implementing efficient search and filtering with GraphQL required careful query optimization. I solved this by creating reusable query fragments and implementing proper caching strategies to minimize API calls and improve performance.",
+        "Creating an intuitive map interface that doesn't overwhelm users was challenging. I focused on clean design principles, progressive disclosure, and clear visual hierarchy to make the map feature both powerful and easy to use.",
+        "Ensuring fast load times with high-resolution property images required image optimization strategies. I implemented lazy loading, image compression, and responsive image sizing to maintain quality while improving performance."
+      ],
+      "outro": "Building EpicEstate was an excellent opportunity to work with GraphQL and create a modern, user-focused real estate platform. The project reinforced the importance of user experience in web applications and taught me valuable lessons about performance optimization and data management.\n\nThe platform successfully demonstrates how modern web technologies can be combined to create intuitive, efficient solutions for complex domains like real estate.",
       "details": {
         "type": "Property Finder",
         "projectDate": "2024",
@@ -302,13 +395,50 @@
       "name": "Events Website",
       "alias": "events-website",
       "shortDescription": "A beautiful events website for special occasions like christenings. Features elegant design and seamless user experience for event information and RSVP management.",
-      "githubUrl": "",
-      "liveUrl": "",
+      "fullDescription": "A custom-built events website designed for special occasions, featuring elegant design and intuitive user experience. This project showcases how thoughtful design can enhance the celebration experience, providing guests with all necessary information and an easy way to RSVP.",
+      "goalsAndMotivation": {
+        "introduction": "Special occasions deserve special presentation. Traditional event invitations often lack the ability to provide comprehensive information and manage RSVPs efficiently. This project aimed to create a beautiful, functional website that enhances the event experience.",
+        "goals": [
+          "Create an elegant, celebratory design that matches the occasion",
+          "Provide clear event information and details",
+          "Implement an intuitive RSVP system",
+          "Ensure mobile-friendly experience for all guests",
+          "Deliver fast loading times and smooth interactions"
+        ],
+        "motivation": "I wanted to create something beautiful that would make special occasions even more memorable. This project allowed me to focus on design aesthetics while building a functional platform that serves a real purpose for event hosts and guests."
+      },
+      "githubUrl": "https://github.com/santos16426/tanya-christening",
+      "liveUrl": "https://tanya-christening.vercel.app/",
       "_id": "events-website",
       "image": {
         "public_id": "events-website",
         "url": "/projects/Tanya.png"
       },
+      "gallery": [
+        {
+          "public_id": "events-website-1",
+          "url": "/projects/Tanya.png",
+          "description": "Elegant homepage with event details and beautiful typography"
+        },
+        {
+          "public_id": "events-website-2",
+          "url": "/projects/Tanya.png",
+          "description": "RSVP form with intuitive user interface"
+        }
+      ],
+      "features": [
+        "Elegant, celebratory design aesthetic",
+        "Clear event information display",
+        "Intuitive RSVP management system",
+        "Fully responsive mobile design",
+        "Smooth animations and transitions",
+        "Fast loading and optimized performance"
+      ],
+      "challenges": [
+        "Balancing aesthetic beauty with functionality required careful design decisions. I focused on creating a design system that felt celebratory while maintaining usability, using elegant typography, thoughtful spacing, and subtle animations.",
+        "Creating an RSVP system that was both simple and comprehensive was key. I designed a form that collects necessary information without feeling overwhelming, with clear validation and user feedback."
+      ],
+      "outro": "This events website project was a delightful opportunity to combine beautiful design with practical functionality. It reinforced my belief that even functional websites can be works of art, and that attention to detail in design significantly enhances user experience.\n\nThe project successfully demonstrates how modern web design can elevate special occasions and make event management more elegant and efficient.",
       "details": {
         "type": "Events Website (Christening)",
         "projectDate": "2024",
@@ -323,13 +453,50 @@
       "name": "Pomodoro",
       "alias": "pomodoro",
       "shortDescription": "A productivity-focused case study featuring a Pomodoro timer application. Helps users manage their time effectively using the proven Pomodoro Technique.",
-      "githubUrl": "",
-      "liveUrl": "",
+      "fullDescription": "A modern Pomodoro timer application built to help users improve their productivity through the proven Pomodoro Technique. This application provides a clean, distraction-free interface for time management, allowing users to focus on their work with structured break intervals.",
+      "goalsAndMotivation": {
+        "introduction": "Time management is crucial for productivity, and the Pomodoro Technique has proven effective for many. However, most Pomodoro apps are either too complex or lack the visual appeal that makes using them enjoyable.",
+        "goals": [
+          "Create a clean, distraction-free timer interface",
+          "Implement accurate timer functionality with break management",
+          "Design an intuitive user experience",
+          "Build a responsive application that works on all devices",
+          "Provide visual feedback for timer states"
+        ],
+        "motivation": "As someone who struggles with time management, I wanted to build a Pomodoro timer that I would actually enjoy using. This project was an opportunity to create a tool that combines functionality with beautiful design, making productivity more engaging."
+      },
+      "githubUrl": "https://github.com/santos16426/pomodoro",
+      "liveUrl": "https://pomdr.vercel.app/",
       "_id": "pomodoro",
       "image": {
         "public_id": "pomodoro",
         "url": "/projects/pomodoro.png"
       },
+      "gallery": [
+        {
+          "public_id": "pomodoro-1",
+          "url": "/projects/pomodoro.png",
+          "description": "Main timer interface with clean design and clear time display"
+        },
+        {
+          "public_id": "pomodoro-2",
+          "url": "/projects/pomodoro.png",
+          "description": "Break timer view with visual indicators"
+        }
+      ],
+      "features": [
+        "Accurate Pomodoro timer (25-minute work sessions)",
+        "Automatic break timer management",
+        "Clean, distraction-free interface",
+        "Visual feedback for timer states",
+        "Responsive design for all devices",
+        "Session tracking and statistics"
+      ],
+      "challenges": [
+        "Implementing accurate timer functionality that works reliably across different browsers and devices required careful handling of JavaScript timing. I used requestAnimationFrame and proper state management to ensure precise timing.",
+        "Creating a visually appealing interface that doesn't distract from the work at hand was important. I focused on minimal design, clear typography, and subtle animations that enhance rather than distract."
+      ],
+      "outro": "Building this Pomodoro timer was a great exercise in creating focused, purposeful applications. The project taught me the importance of simplicity in design and how small details can significantly impact user experience.\n\nWhile simple in concept, the application demonstrates how thoughtful design and careful implementation can create tools that genuinely help users improve their productivity.",
       "details": {
         "type": "Case Study",
         "projectDate": "2023",
@@ -345,6 +512,18 @@
       "name": "Exploretale",
       "alias": "exploretale",
       "shortDescription": "A modern travel website designed to help travelers discover and explore new destinations. Built with cutting-edge web technologies for an immersive travel planning experience.",
+      "fullDescription": "Exploretale is a modern travel platform that helps travelers discover new destinations and plan their adventures. The website features beautiful destination showcases, travel guides, and an immersive browsing experience that inspires wanderlust and makes travel planning enjoyable.",
+      "goalsAndMotivation": {
+        "introduction": "Travel planning can be overwhelming with countless options and information scattered across different platforms. I wanted to create a unified platform that makes discovering and planning travel experiences more intuitive and inspiring.",
+        "goals": [
+          "Create an immersive, visually appealing travel browsing experience",
+          "Showcase destinations with high-quality imagery and information",
+          "Build an intuitive navigation system for exploring destinations",
+          "Implement efficient data management with GraphQL",
+          "Design a responsive platform accessible on all devices"
+        ],
+        "motivation": "Travel has always been a passion of mine, and I wanted to build a platform that captures the excitement of discovering new places. This project allowed me to combine my love for travel with my skills in web development to create something that could inspire others to explore."
+      },
       "githubUrl": "",
       "liveUrl": "",
       "_id": "exploretale",
@@ -352,6 +531,31 @@
         "public_id": "exploretale",
         "url": "/projects/Exploretale.png"
       },
+      "gallery": [
+        {
+          "public_id": "exploretale-1",
+          "url": "/projects/Exploretale.png",
+          "description": "Homepage featuring featured destinations and travel inspiration"
+        },
+        {
+          "public_id": "exploretale-2",
+          "url": "/projects/Exploretale.png",
+          "description": "Destination detail page with comprehensive travel information"
+        }
+      ],
+      "features": [
+        "Beautiful destination showcases with high-quality images",
+        "Comprehensive travel guides and information",
+        "Intuitive destination browsing and filtering",
+        "Responsive design optimized for mobile browsing",
+        "GraphQL API for efficient content management",
+        "Smooth animations and transitions"
+      ],
+      "challenges": [
+        "Creating an immersive visual experience while maintaining fast load times required careful image optimization. I implemented lazy loading, progressive image loading, and responsive image sizing to balance visual quality with performance.",
+        "Organizing and presenting large amounts of travel information in an intuitive way was challenging. I focused on clear information architecture, progressive disclosure, and visual hierarchy to make the content easily digestible."
+      ],
+      "outro": "Exploretale represents my passion for both travel and web development. The project taught me valuable lessons about creating immersive experiences, managing large amounts of content, and balancing visual appeal with performance.\n\nBuilding this platform reinforced my belief that great web experiences can inspire and inform, making complex information accessible and enjoyable to explore.",
       "details": {
         "type": "Travel Website",
         "projectDate": "2022",
@@ -367,6 +571,18 @@
       "name": "Kargax",
       "alias": "kargax",
       "shortDescription": "A comprehensive trucking and logistics platform that streamlines freight management and delivery operations. Designed to optimize supply chain efficiency.",
+      "fullDescription": "Kargax is a comprehensive trucking and logistics management platform designed to streamline freight operations, optimize delivery routes, and improve overall supply chain efficiency. The platform provides tools for managing shipments, tracking deliveries, and coordinating logistics operations.",
+      "goalsAndMotivation": {
+        "introduction": "The logistics industry relies heavily on efficient management systems, but many existing solutions are outdated and difficult to use. I wanted to create a modern platform that simplifies complex logistics operations while improving efficiency.",
+        "goals": [
+          "Streamline freight management and tracking",
+          "Optimize delivery route planning",
+          "Provide real-time shipment tracking",
+          "Create an intuitive interface for logistics professionals",
+          "Improve overall supply chain visibility and efficiency"
+        ],
+        "motivation": "Logistics is a critical industry that often suffers from outdated technology. This project was an opportunity to apply modern web development practices to solve real-world logistics challenges and create a platform that could genuinely improve operational efficiency."
+      },
       "githubUrl": "",
       "liveUrl": "",
       "_id": "kargax",
@@ -374,6 +590,31 @@
         "public_id": "kargax",
         "url": "/projects/Kargax.png"
       },
+      "gallery": [
+        {
+          "public_id": "kargax-1",
+          "url": "/projects/Kargax.png",
+          "description": "Dashboard showing freight management and shipment overview"
+        },
+        {
+          "public_id": "kargax-2",
+          "url": "/projects/Kargax.png",
+          "description": "Route planning interface with map integration"
+        }
+      ],
+      "features": [
+        "Comprehensive freight management system",
+        "Real-time shipment tracking",
+        "Route optimization and planning",
+        "Delivery scheduling and coordination",
+        "Responsive design for field operations",
+        "GraphQL API for efficient data management"
+      ],
+      "challenges": [
+        "Creating an interface that handles complex logistics data without overwhelming users required careful information architecture. I focused on clear data visualization, intuitive navigation, and progressive disclosure of information.",
+        "Implementing real-time tracking and updates while maintaining performance was challenging. I used efficient data fetching strategies, WebSocket connections for live updates, and proper caching to ensure smooth operation."
+      ],
+      "outro": "Building Kargax was a challenging but rewarding experience that taught me a lot about creating applications for complex business domains. The project reinforced the importance of understanding user needs and creating solutions that genuinely improve workflows.\n\nThe platform demonstrates how modern web technologies can be applied to traditional industries, bringing efficiency and usability to operations that have long relied on outdated systems.",
       "details": {
         "type": "Trucking & Logistics",
         "projectDate": "2021",

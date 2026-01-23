@@ -1,18 +1,25 @@
 "use client";
 
 import { useState } from "react";
-
 import { ProjectsProps } from "../utils/types";
 import { SlideIn, Transition } from "./ui/Transitions";
 import { SectionHeading } from "./ui/Typography";
 import { HoverImage } from "./ui/HoverImage";
 import { HandHelping, ChevronDown } from "lucide-react";
 
-function Projects({ projects }: ProjectsProps) {
-  const [showAll, setShowAll] = useState(false);
+interface ProjectsComponentProps extends ProjectsProps {
+  showAll?: boolean;
+}
+
+function Projects({ projects, showAll = false }: ProjectsComponentProps) {
+  const [showAllState, setShowAllState] = useState(false);
   const initialLimit = 3;
-  const displayedProjects = showAll ? projects : projects.slice(0, initialLimit);
-  const hasMore = projects.length > initialLimit;
+  const displayedProjects = showAll 
+    ? projects 
+    : showAllState 
+      ? projects 
+      : projects.slice(0, initialLimit);
+  const hasMore = !showAll && projects.length > initialLimit;
 
   return (
     <section className="px-2 py-20 relative" id="services">
@@ -34,6 +41,7 @@ function Projects({ projects }: ProjectsProps) {
               imgSrc={project.image.url}
               shortDescription={project.shortDescription}
               techStack={project.details.techStack}
+              alias={project.alias}
             />
           </Transition>
         ))}
@@ -41,12 +49,12 @@ function Projects({ projects }: ProjectsProps) {
       {hasMore && (
         <Transition className="flex items-center justify-center py-10">
           <button
-            onClick={() => setShowAll(!showAll)}
+            onClick={() => setShowAllState(!showAllState)}
             className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/50 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground"
           >
-            <span>{showAll ? "Show Less" : "Show More"}</span>
-            <ChevronDown 
-              className={`size-4 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`} 
+            <span>{showAllState ? "Show Less" : "Show More"}</span>
+            <ChevronDown
+              className={`size-4 transition-transform duration-300 ${showAllState ? 'rotate-180' : ''}`}
             />
           </button>
         </Transition>

@@ -39,10 +39,21 @@ export interface Project {
   name: string;
   alias: string;
   shortDescription: string;
+  fullDescription?: string;
+  goalsAndMotivation?: {
+    introduction?: string;
+    goals?: string[];
+    motivation?: string;
+  };
   githubUrl: string;
   liveUrl: string;
   _id: string;
   image: Image;
+  gallery?: Image[];
+  features?: string[];
+  challenges?: string[];
+  highlights?: string[];
+  outro?: string;
   details: {
     type: string;
     projectDate: string;
@@ -54,6 +65,7 @@ export interface Project {
 export interface Image {
   public_id: string;
   url: string;
+  description?: string;
 }
 
 export interface SocialHandle {

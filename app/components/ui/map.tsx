@@ -33,7 +33,7 @@ export function Map({ center, zoom = 10, className, theme = "dark", children }: 
 
     map.current = new maplibregl.Map({
       container: mapContainer.current,
-      style: theme === "dark" 
+      style: theme === "dark"
         ? "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
         : "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
       center: center,

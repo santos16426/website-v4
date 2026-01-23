@@ -53,7 +53,7 @@ const Header = ({ social }: HeaderProps) => {
                 const handleClick = (e: React.MouseEvent) => {
                   e.preventDefault();
                   setIsActive(false);
-                  
+
                   if (href.startsWith('#')) {
                     // Wait for menu animation to close before scrolling
                     setTimeout(() => {
@@ -69,7 +69,7 @@ const Header = ({ social }: HeaderProps) => {
                     }, 300);
                   }
                 };
-                
+
                 return (
                   <div
                     key={`b_${i}`}

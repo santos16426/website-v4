@@ -35,6 +35,7 @@ export interface HoverImageProps {
   shortDescription: string;
   projectDate: string;
   techStack: string[];
+  alias: string;
 }
 
 export interface LoaderWrapperProps {
