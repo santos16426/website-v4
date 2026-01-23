@@ -8,7 +8,11 @@ import { SectionHeading } from "../../components/ui/Typography";
 import { ProjectNav } from "../../components/ui/ProjectNav";
 import { ProjectGallery } from "../../components/ui/ProjectGallery";
 import { ProjectNavigation } from "../../components/ui/ProjectNavigation";
-import { ArrowLeft, ExternalLink, Github, Mail } from "lucide-react";
+import { ProjectActions } from "../../components/ui/ProjectActions";
+import { BackLink } from "../../components/ui/BackLink";
+import ProjectStructuredData from "../../components/ProjectStructuredData";
+import { constructMetadata } from "../../utils";
+import { siteConfig } from "../../utils/site";
 
 interface ProjectDetailPageProps {
   params: Promise<{ alias: string }>;
@@ -18,6 +22,24 @@ async function getProject(alias: string): Promise<Project | null> {
   const portfolio = (await import("../../siteConfig.json")).default;
   const { projects } = portfolio as Portfolio;
   return projects.find((p) => p.alias === alias) || null;
+}
+
+export async function generateMetadata({ params }: ProjectDetailPageProps) {
+  const { alias } = await params;
+  const project = await getProject(alias);
+
+  if (!project) {
+    return constructMetadata();
+  }
+
+  const projectUrl = `${siteConfig.url}/project/${project.alias}`;
+
+  return constructMetadata({
+    title: project.name,
+    description: project.shortDescription || project.fullDescription || project.name,
+    image: project.image?.url || siteConfig.ogImage,
+    canonical: projectUrl,
+  });
 }
 
 export default async function ProjectDetailPage({
@@ -57,19 +79,14 @@ export default async function ProjectDetailPage({
 
   return (
     <main className="relative min-h-screen">
+      <ProjectStructuredData project={project} />
       <Header social={social_handles} />
       <ProjectNav items={navItems} />
       <div className="px-2 py-20 relative max-w-6xl mx-auto">
         <span className="blob absolute top-[20%] right-0 w-1/3 h-5/6 blur-[100px] rotate-180 -z-10 opacity-50" />
 
         <Transition className="mb-8">
-          <Link
-            href="/project"
-            className="inline-flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors duration-300"
-          >
-            <ArrowLeft className="size-4" />
-            <span>Back to Projects</span>
-          </Link>
+          <BackLink href="/project" label="Back to Projects" />
         </Transition>
 
         <div className="mb-12">
@@ -233,39 +250,12 @@ export default async function ProjectDetailPage({
               <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">
                 Repositories
               </h2>
-              <div className="flex flex-wrap gap-4">
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/50 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground"
-                  >
-                    <Github className="size-4" />
-                    <span>View on GitHub</span>
-                  </a>
-                )}
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/50 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground"
-                  >
-                    <ExternalLink className="size-4" />
-                    <span>Live Demo</span>
-                  </a>
-                )}
-                {!project.githubUrl && !project.liveUrl && (
-                  <a
-                    href={`mailto:${portfolio.about.contactEmail}?subject=Inquiry about ${project.name}`}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/50 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground"
-                  >
-                    <Mail className="size-4" />
-                    <span>Contact Me</span>
-                  </a>
-                )}
-              </div>
+              <ProjectActions
+                githubUrl={project.githubUrl}
+                liveUrl={project.liveUrl}
+                contactEmail={portfolio.about.contactEmail}
+                projectName={project.name}
+              />
             </Transition>
           </div>
 

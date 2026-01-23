@@ -1,6 +1,14 @@
 import Projects from "../components/Projects";
 import Header from "../components/header";
 import { Portfolio } from "../utils/interface";
+import { constructMetadata } from "../utils";
+import { siteConfig } from "../utils/site";
+
+export const metadata = constructMetadata({
+  title: "Projects",
+  description: "Explore my portfolio of web development projects, featuring React, Next.js, and full-stack applications.",
+  canonical: `${siteConfig.url}/project`,
+});
 
 export default async function ProjectListPage() {
   const portfolio = (await import("../siteConfig.json")).default;

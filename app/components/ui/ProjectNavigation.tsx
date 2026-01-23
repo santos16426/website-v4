@@ -6,6 +6,7 @@ import { Project } from "../../utils/interface";
 import { ArrowRight, Grid3x3 } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { trackLinkClick, trackProjectView, trackEvent } from "../../utils/events";
 
 interface ProjectNavigationProps {
   currentProject: Project;
@@ -45,6 +46,10 @@ export function ProjectNavigation({
           <Link
             href={`/project/${nextProject.alias}`}
             className="group flex items-center justify-between p-6 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 hover:border-emerald-400/50 transition-all duration-300"
+            onClick={() => {
+              trackLinkClick(`/project/${nextProject.alias}`, "Next Project");
+              trackProjectView(nextProject.name, nextProject.alias);
+            }}
           >
             <div className="flex items-center gap-4">
               <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border border-white/10 shrink-0">
@@ -96,6 +101,10 @@ export function ProjectNavigation({
                     key={project._id}
                     href={`/project/${project.alias}`}
                     className="group relative p-4 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 hover:border-emerald-400/50 transition-all duration-300"
+                    onClick={() => {
+                      trackLinkClick(`/project/${project.alias}`, project.name);
+                      trackProjectView(project.name, project.alias);
+                    }}
                   >
                     <div className="relative w-full h-32 rounded-lg overflow-hidden border border-white/10 mb-3">
                       <Image

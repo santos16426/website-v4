@@ -9,6 +9,8 @@ import { useMediaQuery } from "../utils/useMediaQuery";
 import Link from "next/link";
 import { ArrowUpRight } from "./ui/Icons";
 import { Transition } from "./ui/Transitions";
+import { trackLinkClick, trackEvent, trackSocialShare } from "../utils/events";
+
 const Header = ({ social }: HeaderProps) => {
   const [isActive, setIsActive] = useState(false);
   const isMobile = useMediaQuery("(max-width:768px)");
@@ -34,8 +36,11 @@ const Header = ({ social }: HeaderProps) => {
 
   return (
     <motion.header className="fixed top-0 md:mt-12 md:mr-12 right-0 z-20">
-      <Transition className="fixed md:top-8 top-6 md:left-8 left-6 z-30 ">
-        <Link href={"/"}>
+      <Transition className="fixed md:top-8 top-6 md:left-8 left-6 z-30">
+        <Link 
+          href={"/"}
+          onClick={() => trackLinkClick("/", "Logo/Home")}
+        >
           <TextReveal className="font-semibold ">Lucas</TextReveal>
         </Link>
       </Transition>
@@ -54,6 +59,9 @@ const Header = ({ social }: HeaderProps) => {
                   e.preventDefault();
                   setIsActive(false);
 
+                  // Track navigation event
+                  trackLinkClick(href, title);
+
                   if (href.startsWith('#')) {
                     // Wait for menu animation to close before scrolling
                     setTimeout(() => {
@@ -67,14 +75,14 @@ const Header = ({ social }: HeaderProps) => {
                     setTimeout(() => {
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }, 300);
+                  } else {
+                    // For other routes like /blog, let Next.js Link handle navigation
+                    // Menu will close automatically
                   }
                 };
 
                 return (
-                  <div
-                    key={`b_${i}`}
-                    className=""
-                  >
+                  <div key={`b_${i}`}>
                     <Link
                       href={href}
                       className="flex flex-wrap overflow-hidden"
@@ -119,13 +127,14 @@ const Header = ({ social }: HeaderProps) => {
                   <motion.a
                     href={url}
                     target="_blank"
-                    className=" w-1/2 mt-1 text-slate-950"
+                    className="w-1/2 mt-1 text-slate-950"
                     variants={slideIn}
                     custom={i}
                     initial="initial"
                     animate="enter"
                     exit="exit"
                     key={_id}
+                    onClick={() => trackSocialShare(platform, url)}
                   >
                     <TextReveal>{platform}</TextReveal>
                   </motion.a>
@@ -154,6 +163,15 @@ function Button({
   isActive: boolean;
   toggleMenu: () => void;
 }) {
+  const handleToggle = () => {
+    toggleMenu();
+    trackEvent({
+      category: "engagement",
+      action: isActive ? "close_menu" : "open_menu",
+      label: "Navigation Menu",
+    });
+  };
+
   return (
     <div className="absolute md:top-0 top-4 right-4 md:right-0 w-[100px] h-10 rounded-full overflow-hidden cursor-pointer">
       <motion.div
@@ -163,17 +181,13 @@ function Button({
       >
         <motion.div
           className="bg-[#65bccd] h-full w-full grid place-items-center text-black"
-          onClick={() => {
-            toggleMenu();
-          }}
+          onClick={handleToggle}
         >
           <TextReveal>Menu</TextReveal>
         </motion.div>
         <motion.div
           className="bg-black h-full w-full grid place-items-center"
-          onClick={() => {
-            toggleMenu();
-          }}
+          onClick={handleToggle}
         >
           <TextReveal>Close</TextReveal>
         </motion.div>
@@ -198,6 +212,10 @@ const navLinks = [
   {
     title: "Experience",
     href: "#experience",
+  },
+  {
+    title: "Blog",
+    href: "#blog",
   },
   {
     title: "Contact",

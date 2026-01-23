@@ -6,6 +6,7 @@ import { ContactProps } from "../utils/types";
 import { SectionHeading, TextReveal } from "./ui/Typography";
 import { SlideIn, Transition } from "./ui/Transitions";
 import { Mail } from "lucide-react";
+import { trackContactSubmission, trackLinkClick } from "../utils/events";
 const Contact = ({ email }: ContactProps) => {
   return (
     <motion.section className="relative pb-64" id="contact">
@@ -19,7 +20,7 @@ const Contact = ({ email }: ContactProps) => {
             </div>
           </SlideIn>
         </SectionHeading>
-        <div className="md:pt-16 ">
+        <div className="md:pt-16">
           <div className="flex flex-col items-center justify-center">
             <div className="pb-4 text-center">
               <Transition>
@@ -47,6 +48,7 @@ const Contact = ({ email }: ContactProps) => {
             <Link
               href={"https://www.linkedin.com/in/billy-santos/"}
               className="hover:underline"
+              onClick={() => trackLinkClick("https://www.linkedin.com/in/billy-santos/", "Developer Link")}
             >
               lucas
             </Link>

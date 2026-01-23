@@ -1,4 +1,4 @@
-import { About, Experience, Project, Skill, SocialHandle } from "./interface";
+import { About, Experience, Project, Skill, SocialHandle, Blog } from "./interface";
 
 // Component Props Types
 export interface HeroProps {
@@ -46,4 +46,8 @@ export interface LoaderWrapperProps {
 export interface PageLoadProps {
   setHideLoader: (value: boolean) => void;
   subTitle: string;
+}
+
+export interface BlogsProps {
+  blogs: Blog[];
 }

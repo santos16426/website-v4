@@ -14,6 +14,12 @@ const nextConfig = {
       {
         hostname: "*.fbcdn.net",
       },
+      {
+        hostname: "images.unsplash.com",
+      },
+      {
+        hostname: "unsplash.com",
+      },
     ],
   },
 };

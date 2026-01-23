@@ -5,13 +5,14 @@ import { useEffect, useState } from "react";
 interface NavItem {
   id: string;
   label: string;
+  level?: number;
 }
 
-interface ProjectNavProps {
+interface BlogNavProps {
   items: NavItem[];
 }
 
-export function ProjectNav({ items }: ProjectNavProps) {
+export function BlogNav({ items }: BlogNavProps) {
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
@@ -78,7 +79,7 @@ export function ProjectNav({ items }: ProjectNavProps) {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 120;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -98,26 +99,31 @@ export function ProjectNav({ items }: ProjectNavProps) {
           On this page
         </h4>
         <div className="flex flex-col gap-0.5">
-          {items.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className="text-left transition-all duration-200 group relative w-full"
-            >
-              <span
-                className={`text-sm transition-all duration-200 block py-1.5 px-1 break-words overflow-wrap-anywhere ${
-                  activeId === item.id
-                    ? "text-white font-medium pl-5"
-                    : "text-foreground/50 hover:text-foreground/80"
-                }`}
+          {items.map((item) => {
+            const indentLevel = item.level ? Math.min(item.level - 1, 3) : 0;
+            const indentStyle = indentLevel > 0 ? { paddingLeft: `${indentLevel * 12}px` } : {};
+            return (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-left transition-all duration-200 group relative w-full"
               >
-                {item.label}
-              </span>
-              {activeId === item.id && (
-                <span className="absolute left-0 top-0 bottom-0 w-0.5 bg-emerald-400 rounded-full"></span>
-              )}
-            </button>
-          ))}
+                <span
+                  style={indentStyle}
+                  className={`text-sm transition-all duration-200 block py-1.5 px-1 break-words overflow-wrap-anywhere ${
+                    activeId === item.id
+                      ? "text-white font-medium pl-5"
+                      : "text-foreground/50 hover:text-foreground/80"
+                  }`}
+                >
+                  {item.label}
+                </span>
+                {activeId === item.id && (
+                  <span className="absolute left-0 top-0 bottom-0 w-0.5 bg-emerald-400 rounded-full"></span>
+                )}
+              </button>
+            );
+          })}
         </div>
       </div>
     </nav>
