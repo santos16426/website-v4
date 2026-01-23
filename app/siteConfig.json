@@ -282,16 +282,6 @@
           "public_id": "therapy-clinic-1",
           "url": "/projects/TherapyClinic.png",
           "description": "Main dashboard showing patient overview and upcoming appointments with a clean, intuitive interface"
-        },
-        {
-          "public_id": "therapy-clinic-2",
-          "url": "/projects/TherapyClinic.png",
-          "description": "Patient record management interface with secure data entry forms and comprehensive patient history"
-        },
-        {
-          "public_id": "therapy-clinic-3",
-          "url": "/projects/TherapyClinic.png",
-          "description": "Appointment scheduling calendar with drag-and-drop functionality and real-time availability updates"
         }
       ],
       "features": [
@@ -354,16 +344,6 @@
           "public_id": "real-estate-1",
           "url": "/projects/RealEstate.png",
           "description": "Homepage featuring featured properties and search functionality"
-        },
-        {
-          "public_id": "real-estate-2",
-          "url": "/projects/RealEstate.png",
-          "description": "Property listing page with detailed information and image gallery"
-        },
-        {
-          "public_id": "real-estate-3",
-          "url": "/projects/RealEstate.png",
-          "description": "Interactive map view showing property locations and filters"
         }
       ],
       "features": [
@@ -419,11 +399,6 @@
           "public_id": "events-website-1",
           "url": "/projects/Tanya.png",
           "description": "Elegant homepage with event details and beautiful typography"
-        },
-        {
-          "public_id": "events-website-2",
-          "url": "/projects/Tanya.png",
-          "description": "RSVP form with intuitive user interface"
         }
       ],
       "features": [
@@ -477,11 +452,6 @@
           "public_id": "pomodoro-1",
           "url": "/projects/pomodoro.png",
           "description": "Main timer interface with clean design and clear time display"
-        },
-        {
-          "public_id": "pomodoro-2",
-          "url": "/projects/pomodoro.png",
-          "description": "Break timer view with visual indicators"
         }
       ],
       "features": [
@@ -595,11 +565,6 @@
           "public_id": "kargax-1",
           "url": "/projects/Kargax.png",
           "description": "Dashboard showing freight management and shipment overview"
-        },
-        {
-          "public_id": "kargax-2",
-          "url": "/projects/Kargax.png",
-          "description": "Route planning interface with map integration"
         }
       ],
       "features": [

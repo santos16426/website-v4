@@ -83,6 +83,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Project Page** - Updated `/project` page to automatically display all enabled projects without show more/less button
 - **HoverImage Component** - Updated to link to individual project detail pages instead of anchor links
 - **Project Data Structure** - Enhanced siteConfig.json with detailed project information including goals, features, challenges, galleries, and outros
+- **Project Galleries** - Removed duplicate placeholder images from project galleries, keeping one image per project for cleaner data structure
 
 ### Fixed
 - **Performance** - Optimized bouncing hobbies animation with visibility detection and cached container sizes
