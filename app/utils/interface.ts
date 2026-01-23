@@ -2,6 +2,7 @@ export interface Portfolio {
   about: About;
   experience: Experience[];
   projects: Project[];
+  blogs?: Blog[];
   social_handles: SocialHandle[];
   skills: Skill[];
 }
@@ -88,4 +89,41 @@ export interface Experience {
   forEducation: boolean;
   enabled: boolean;
   _id: string;
+}
+
+export interface Blog {
+  featured: boolean;
+  type: "comparison" | "tutorial" | "guide" | "overview";
+  title: string;
+  alias: string;
+  shortDescription: string;
+  date: string;
+  thumbnail: string;
+  content?: string;
+  tags?: string[];
+  readTime?: string;
+  _id?: string;
+  youtubeUrl?: string;
+  sourceCodeUrl?: string;
+  resources?: Array<{
+    title: string;
+    url: string;
+    description?: string;
+  }>;
+  relatedLinks?: Array<{
+    title: string;
+    url: string;
+    description?: string;
+  }>;
+  codeSamples?: Array<{
+    title: string;
+    code: string;
+    language?: string;
+    description?: string;
+  }>;
+  imageSamples?: Array<{
+    url: string;
+    alt: string;
+    description?: string;
+  }>;
 }

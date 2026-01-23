@@ -10,6 +10,9 @@ export const formatDate = (date: string) => {
   return { month, year };
 };
 
+// Export event tracking functions
+export * from "./events";
+
 export function constructMetadata({
   title = siteConfig.name,
   description = siteConfig.description,

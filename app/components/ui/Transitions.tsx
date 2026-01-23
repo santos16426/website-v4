@@ -86,7 +86,7 @@ export const OpacityTextReveal = (props: HTMLAttributes<HTMLSpanElement>) => {
 
 export const OpacityTransition = ({ children }: { children: string }) => {
   return (
-    <div className="overflow-hidden ">
+    <div className="overflow-hidden">
       {children.split("").map((char, i) => (
         <motion.span
           initial={{ opacity: 0.1 }}
