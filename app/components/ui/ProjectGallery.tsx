@@ -57,9 +57,10 @@ export function ProjectGallery({ images, projectName }: ProjectGalleryProps) {
           <motion.button
             key={index}
             onClick={() => openImage(index)}
-            className="group relative shrink-0 w-full md:w-[500px] h-[400px] md:h-[500px] rounded-lg overflow-hidden border border-white/10 hover:border-emerald-400/50 transition-all duration-300"
+            className="group relative shrink-0 w-full md:w-[500px] h-[400px] md:h-[500px] rounded-lg overflow-hidden border border-white/10 hover:border-emerald-400/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-black"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
+            aria-label={img.description || `View ${projectName} image ${index + 1} in full screen`}
           >
             <Image
               src={img.url}
@@ -98,11 +99,12 @@ export function ProjectGallery({ images, projectName }: ProjectGalleryProps) {
               {/* Close Button */}
               <motion.button
                 onClick={closeImage}
-                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition-colors duration-300"
+                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                aria-label="Close image viewer"
               >
-                <X className="size-5 text-white" />
+                <X className="size-5 text-white" aria-hidden="true" />
               </motion.button>
 
               {/* Navigation Buttons */}
@@ -113,22 +115,24 @@ export function ProjectGallery({ images, projectName }: ProjectGalleryProps) {
                       e.stopPropagation();
                       navigateImage("prev");
                     }}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition-colors duration-300 text-white"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition-colors duration-300 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
                     whileHover={{ scale: 1.1, x: -5 }}
                     whileTap={{ scale: 0.9 }}
+                    aria-label="Previous image"
                   >
-                    <ChevronLeft className="size-6" />
+                    <ChevronLeft className="size-6" aria-hidden="true" />
                   </motion.button>
                   <motion.button
                     onClick={(e) => {
                       e.stopPropagation();
                       navigateImage("next");
                     }}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition-colors duration-300 text-white"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition-colors duration-300 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
                     whileHover={{ scale: 1.1, x: 5 }}
                     whileTap={{ scale: 0.9 }}
+                    aria-label="Next image"
                   >
-                    <ChevronRight className="size-6" />
+                    <ChevronRight className="size-6" aria-hidden="true" />
                   </motion.button>
                 </>
               )}

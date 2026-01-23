@@ -8,6 +8,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Web Manifest** - Added `site.webmanifest` file for PWA support with app name, theme colors, and icons
+- **Performance Optimizations** - Implemented critical performance improvements:
+  - Preconnect hints for Google Fonts (fonts.googleapis.com, fonts.gstatic.com)
+  - DNS prefetch for analytics and media resources (Google Analytics, Umami, YouTube)
+  - Font loading optimization with `display: swap` and reduced font weights (300-700)
+  - Analytics scripts loaded with `lazyOnload` strategy to reduce critical path latency
+- **Security Headers** - Added security headers in Next.js config:
+  - X-DNS-Prefetch-Control
+  - X-Frame-Options
+  - X-Content-Type-Options
+  - Referrer-Policy
+  - Permissions-Policy
+- **Console Error Filtering** - Added console error suppression for analytics scripts blocked by ad blockers
+- **SEO Enhancements for Name Search** - Optimized SEO for "Billy Joe Santos" search queries:
+  - Added comprehensive keywords including "Billy Joe Santos" variations
+  - Updated site description to prominently feature full name
+  - Updated metadata authors, creator, and publisher fields to use full name
+  - Added location-based keywords (Philippines Developer, Quezon City Developer)
 - **Blog Section** - Implemented comprehensive blog functionality with:
   - Dynamic blog routing at `/blog` (list page) and `/blog/[alias]` (detail pages)
   - Featured blogs section on homepage
@@ -102,6 +120,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Key-tile button animations
 
 ### Changed
+- **Font Loading** - Optimized Poppins font loading with reduced weights (300-700), display swap, and fallback fonts
+- **Analytics Script Loading** - Changed analytics scripts from `afterInteractive` to `lazyOnload` strategy for better performance
+- **Site Description** - Enhanced site description to include "Billy Joe Santos" for better SEO discoverability
+- **Metadata Keywords** - Expanded keyword list with name variations and location-based terms for improved search visibility
 - **Navigation Menu** - Added "Blog" link to main navigation menu
 - **Sitemap Generation** - Updated to dynamically include all blog and project pages with lastModified dates
 - **Analytics Integration** - Enhanced Analytics component with explicit page view tracking on route changes
@@ -117,6 +139,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Project Galleries** - Removed duplicate placeholder images from project galleries, keeping one image per project for cleaner data structure
 
 ### Fixed
+- **Metadata Export** - Restored missing `export const metadata` in root layout.tsx to fix page title display
+- **YouTube Iframe Attributes** - Fixed duplicate attributes in YouTube iframe embed and added proper accessibility attributes
 - **Social Share Links** - Fixed empty content issue in social share dialogs by using dynamic URL generation on click
 - **TypeScript Type Safety** - Replaced `(window as any)` assertions with proper type declarations for analytics
 - **Blog Metadata** - Fixed incorrect `blog.description` reference to use `blog.shortDescription`

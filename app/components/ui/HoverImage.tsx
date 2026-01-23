@@ -96,7 +96,8 @@ export const HoverImage = ({
         initial="initial"
         whileHover="whileHover"
         whileInView="animate"
-        className="group relative flex items-center justify-between border-b border-white/10 py-4 transition-colors duration-500 md:py-6 md:px-16 hover:bg-white/5"
+        className="group relative flex items-center justify-between border-b border-white/10 py-4 transition-colors duration-500 md:py-6 md:px-16 hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-black"
+        aria-label={`View ${heading} project details`}
       >
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -171,7 +172,8 @@ export const HoverImage = ({
           }}
           src={imgSrc}
           className="absolute z-999 h-40 w-56 rounded-lg object-cover md:h-80 md:w-[28rem] max-md:hidden shadow-2xl"
-          alt={`Image representing a link for ${heading}`}
+          alt={`Preview image for ${heading} project`}
+          aria-hidden="true"
         />
       </MotionLink>
     </motion.div>

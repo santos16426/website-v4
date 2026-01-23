@@ -102,7 +102,9 @@ export function ProjectNav({ items }: ProjectNavProps) {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-left transition-all duration-200 group relative w-full"
+              className="text-left transition-all duration-200 group relative w-full focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-black rounded"
+              aria-label={`Navigate to ${item.label} section`}
+              aria-current={activeId === item.id ? "true" : "false"}
             >
               <span
                 className={`text-sm transition-all duration-200 block py-1.5 px-1 break-words overflow-wrap-anywhere ${

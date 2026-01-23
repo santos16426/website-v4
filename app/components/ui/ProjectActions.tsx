@@ -18,7 +18,7 @@ export function ProjectActions({ githubUrl, liveUrl, contactEmail, projectName }
           href={githubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/50 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/50 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-black"
           onClick={() => {
             trackLinkClick(githubUrl, "View on GitHub");
             trackEvent({
@@ -28,8 +28,9 @@ export function ProjectActions({ githubUrl, liveUrl, contactEmail, projectName }
               url: githubUrl,
             });
           }}
+          aria-label={`View ${projectName} on GitHub (opens in new tab)`}
         >
-          <Github className="size-4" />
+          <Github className="size-4" aria-hidden="true" />
           <span>View on GitHub</span>
         </a>
       )}
@@ -38,7 +39,7 @@ export function ProjectActions({ githubUrl, liveUrl, contactEmail, projectName }
           href={liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/50 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/50 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-black"
           onClick={() => {
             trackLinkClick(liveUrl, "Live Demo");
             trackEvent({
@@ -48,15 +49,16 @@ export function ProjectActions({ githubUrl, liveUrl, contactEmail, projectName }
               url: liveUrl,
             });
           }}
+          aria-label={`View ${projectName} live demo (opens in new tab)`}
         >
-          <ExternalLink className="size-4" />
+          <ExternalLink className="size-4" aria-hidden="true" />
           <span>Live Demo</span>
         </a>
       )}
       {!githubUrl && !liveUrl && (
         <a
           href={`mailto:${contactEmail}?subject=Inquiry about ${projectName}`}
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/50 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/50 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-black"
           onClick={() => {
             trackContactSubmission("email");
             trackEvent({
@@ -65,8 +67,9 @@ export function ProjectActions({ githubUrl, liveUrl, contactEmail, projectName }
               label: projectName,
             });
           }}
+          aria-label={`Contact about ${projectName} project`}
         >
-          <Mail className="size-4" />
+          <Mail className="size-4" aria-hidden="true" />
           <span>Contact Me</span>
         </a>
       )}

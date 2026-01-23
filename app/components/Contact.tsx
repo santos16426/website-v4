@@ -15,7 +15,7 @@ const Contact = ({ email }: ContactProps) => {
         <SectionHeading className="">
           <SlideIn className="text-white/40">
             <div className="flex w-fit items-center gap-2 rounded-full bg-emerald-950/55 px-4 py-2 text-emerald-300">
-              <Mail  className="size-4" />
+              <Mail className="size-4" aria-hidden="true" />
               <h2 className="text-sm font-medium tracking-wide max-sm:text-xs">Contact me</h2>
             </div>
           </SlideIn>
@@ -47,8 +47,11 @@ const Contact = ({ email }: ContactProps) => {
             developed by @
             <Link
               href={"https://www.linkedin.com/in/billy-santos/"}
-              className="hover:underline"
+              className="hover:underline focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-black rounded"
               onClick={() => trackLinkClick("https://www.linkedin.com/in/billy-santos/", "Developer Link")}
+              aria-label="Visit developer's LinkedIn profile (opens in new tab)"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               lucas
             </Link>

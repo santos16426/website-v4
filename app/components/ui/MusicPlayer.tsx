@@ -55,6 +55,10 @@ const MusicPlayer = ({ youtubeUrl }: MusicPlayerProps) => {
     if (!('YT' in window)) {
       const tag = document.createElement("script");
       tag.src = "https://www.youtube.com/iframe_api";
+      tag.async = true;
+      tag.onerror = () => {
+        console.debug("YouTube IFrame API failed to load");
+      };
       const firstScriptTag = document.getElementsByTagName("script")[0];
       firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
     }

@@ -27,7 +27,7 @@ function Projects({ projects, showAll = false }: ProjectsComponentProps) {
       <SectionHeading className="">
           <SlideIn className="text-white/40">
             <div className="flex w-fit items-center gap-2 rounded-full bg-emerald-950/55 px-4 py-2 text-emerald-300">
-              <HandHelping  className="size-4" />
+              <HandHelping className="size-4" aria-hidden="true" />
               <h2 className="text-sm font-medium tracking-wide max-sm:text-xs">Projects and Case Studies</h2>
             </div>
           </SlideIn>
@@ -50,11 +50,14 @@ function Projects({ projects, showAll = false }: ProjectsComponentProps) {
         <Transition className="flex items-center justify-center py-10">
           <button
             onClick={() => setShowAllState(!showAllState)}
-            className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/50 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground"
+            className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/50 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-black"
+            aria-label={showAllState ? "Show fewer projects" : `Show all ${projects.length} projects`}
+            aria-expanded={showAllState}
           >
             <span>{showAllState ? "Show Less" : "Show More"}</span>
             <ChevronDown
               className={`size-4 transition-transform duration-300 ${showAllState ? 'rotate-180' : ''}`}
+              aria-hidden="true"
             />
           </button>
         </Transition>

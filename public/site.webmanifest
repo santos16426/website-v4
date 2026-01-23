@@ -1,0 +1,19 @@
+{
+  "name": "Lucas | Software Engineer",
+  "short_name": "Lucas",
+  "description": "Portfolio website for Billy Joe Santos - Software Engineer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#10b981",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    }
+  ]
+}

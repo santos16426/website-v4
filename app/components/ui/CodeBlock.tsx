@@ -37,7 +37,7 @@ export function CodeBlock({ code, language = "javascript" }: CodeBlockProps) {
       <div className="flex items-center justify-between border border-white/10 border-b-0 px-4 py-2.5 rounded-t-lg" style={{ backgroundColor: selectedTheme.backgroundColor }}>
         <div className="flex items-center gap-3">
           {/* Window Controls */}
-          <div className="flex gap-1.5">
+          <div className="flex gap-1.5" aria-hidden="true">
             <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
             <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
             <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>

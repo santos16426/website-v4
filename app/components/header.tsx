@@ -40,6 +40,8 @@ const Header = ({ social }: HeaderProps) => {
         <Link 
           href={"/"}
           onClick={() => trackLinkClick("/", "Logo/Home")}
+          className="focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-black rounded"
+          aria-label="Navigate to homepage"
         >
           <TextReveal className="font-semibold ">Lucas</TextReveal>
         </Link>
@@ -85,8 +87,9 @@ const Header = ({ social }: HeaderProps) => {
                   <div key={`b_${i}`}>
                     <Link
                       href={href}
-                      className="flex flex-wrap overflow-hidden"
+                      className="flex flex-wrap overflow-hidden focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 focus:ring-offset-[#65bccd] rounded"
                       onClick={handleClick}
+                      aria-label={href.startsWith('#') ? `Navigate to ${title} section` : `Navigate to ${title} page`}
                     >
                       <motion.div
                         variants={perspective}
@@ -103,8 +106,9 @@ const Header = ({ social }: HeaderProps) => {
                             initial: { x: -20 },
                             whileHover: { x: 0 },
                           }}
+                          aria-hidden="true"
                         >
-                          <ArrowUpRight />
+                          <ArrowUpRight aria-hidden="true" />
                         </motion.span>
                         <motion.span
                           variants={{
@@ -127,7 +131,8 @@ const Header = ({ social }: HeaderProps) => {
                   <motion.a
                     href={url}
                     target="_blank"
-                    className="w-1/2 mt-1 text-slate-950"
+                    rel="noopener noreferrer"
+                    className="w-1/2 mt-1 text-slate-950 focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 focus:ring-offset-[#65bccd] rounded"
                     variants={slideIn}
                     custom={i}
                     initial="initial"
@@ -135,6 +140,7 @@ const Header = ({ social }: HeaderProps) => {
                     exit="exit"
                     key={_id}
                     onClick={() => trackSocialShare(platform, url)}
+                    aria-label={`Visit ${platform} profile (opens in new tab)`}
                   >
                     <TextReveal>{platform}</TextReveal>
                   </motion.a>
@@ -179,18 +185,22 @@ function Button({
         animate={{ top: isActive ? "-100%" : "0%" }}
         transition={{ duration: 0.5, type: "tween", ease: [0.76, 0, 0.24, 1] as const }}
       >
-        <motion.div
-          className="bg-[#65bccd] h-full w-full grid place-items-center text-black"
+        <motion.button
+          className="bg-[#65bccd] h-full w-full grid place-items-center text-black border-0 cursor-pointer"
           onClick={handleToggle}
+          aria-label="Open navigation menu"
+          aria-expanded={isActive}
         >
           <TextReveal>Menu</TextReveal>
-        </motion.div>
-        <motion.div
-          className="bg-black h-full w-full grid place-items-center"
+        </motion.button>
+        <motion.button
+          className="bg-black h-full w-full grid place-items-center border-0 cursor-pointer"
           onClick={handleToggle}
+          aria-label="Close navigation menu"
+          aria-expanded={isActive}
         >
           <TextReveal>Close</TextReveal>
-        </motion.div>
+        </motion.button>
       </motion.div>
     </div>
   );

@@ -45,11 +45,12 @@ export function ProjectNavigation({
         {nextProject && (
           <Link
             href={`/project/${nextProject.alias}`}
-            className="group flex items-center justify-between p-6 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 hover:border-emerald-400/50 transition-all duration-300"
+            className="group flex items-center justify-between p-6 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 hover:border-emerald-400/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-black"
             onClick={() => {
               trackLinkClick(`/project/${nextProject.alias}`, "Next Project");
               trackProjectView(nextProject.name, nextProject.alias);
             }}
+            aria-label={`Navigate to next project: ${nextProject.name}`}
           >
             <div className="flex items-center gap-4">
               <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border border-white/10 shrink-0">
@@ -70,16 +71,25 @@ export function ProjectNavigation({
                 </p>
               </div>
             </div>
-            <ArrowRight className="size-5 text-foreground/50 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all duration-300" />
+            <ArrowRight className="size-5 text-foreground/50 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all duration-300" aria-hidden="true" />
           </Link>
         )}
 
         {/* View All Projects Toggle */}
         <button
-          onClick={() => setShowAllProjects(!showAllProjects)}
-          className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground"
+          onClick={() => {
+            setShowAllProjects(!showAllProjects);
+            trackEvent({
+              category: "engagement",
+              action: showAllProjects ? "hide_all_projects" : "view_all_projects",
+              label: "Project Navigation",
+            });
+          }}
+          className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-black"
+          aria-label={showAllProjects ? `Hide all ${availableProjects.length} projects` : `View all ${availableProjects.length} projects`}
+          aria-expanded={showAllProjects}
         >
-          <Grid3x3 className="size-4" />
+          <Grid3x3 className="size-4" aria-hidden="true" />
           <span>
             {showAllProjects ? "Hide" : "View"} All Projects ({availableProjects.length})
           </span>

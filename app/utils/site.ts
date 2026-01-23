@@ -4,7 +4,7 @@ const site_url =
 export const siteConfig = {
   name: "Lucas | Software Engineer",
   description:
-    "Website for Billy Joe Santos",
+    "Billy Joe Santos - Software Engineer and Full Stack Developer. Portfolio showcasing web development projects, React applications, and software engineering expertise.",
   url: site_url,
   ogImage: `${site_url}/_static/og-image.png`,
   links: {

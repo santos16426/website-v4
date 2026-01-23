@@ -17,7 +17,7 @@ export function BackLink({ href, label, className = "inline-flex items-center ga
       className={className}
       onClick={() => trackLinkClick(href, label)}
     >
-      <ArrowLeft className="size-4" />
+      <ArrowLeft className="size-4" aria-hidden="true" />
       <span>{label}</span>
     </Link>
   );

@@ -88,7 +88,7 @@ function Blogs({ blogs, showAll = false }: BlogsProps & { showAll?: boolean }) {
       <SectionHeading className="">
         <SlideIn className="text-white/40">
           <div className="flex w-fit items-center gap-2 rounded-full bg-emerald-950/55 px-4 py-2 text-emerald-300">
-            <BookOpen className="size-4" />
+            <BookOpen className="size-4" aria-hidden="true" />
             <h2 className="text-sm font-medium tracking-wide max-sm:text-xs">Latest Articles</h2>
           </div>
         </SlideIn>
@@ -145,10 +145,10 @@ function Blogs({ blogs, showAll = false }: BlogsProps & { showAll?: boolean }) {
                     >
                       {blog.type}
                     </motion.span>
-                    <span>•</span>
+                    <span aria-hidden="true">•</span>
                     <div className="flex items-center gap-1">
-                      <Calendar className="size-3" />
-                      <span>{formatDate(blog.date)}</span>
+                      <Calendar className="size-3" aria-hidden="true" />
+                      <time dateTime={blog.date}>{formatDate(blog.date)}</time>
                     </div>
                   </motion.div>
                   <motion.h3 
@@ -206,8 +206,9 @@ function Blogs({ blogs, showAll = false }: BlogsProps & { showAll?: boolean }) {
             >
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 transition-colors duration-300 text-foreground/70 hover:text-foreground focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-black"
                 onClick={() => trackLinkClick("/blog", "View All Articles")}
+                aria-label="View all blog articles"
               >
                 <motion.span
                   initial={{ x: 0 }}
