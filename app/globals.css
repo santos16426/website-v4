@@ -126,6 +126,7 @@ html {
 }
 
 .key-tile {
+  background: red;
   box-shadow: .15rem .15rem 0 0 var(--background-3),.3rem .3rem 0 0 var(--background-3),.45rem .45rem 0 0 var(--background-3),.6rem .6rem 0 0 var(--background-3);
   position: relative;
   font-size: calc(var(--size) / 2);

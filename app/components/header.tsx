@@ -10,6 +10,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "./ui/Icons";
 import { Transition } from "./ui/Transitions";
 import { trackLinkClick, trackEvent, trackSocialShare } from "../utils/events";
+import { cn } from "../utils/cn";
 
 const Header = ({ social }: HeaderProps) => {
   const [isActive, setIsActive] = useState(false);
@@ -37,7 +38,7 @@ const Header = ({ social }: HeaderProps) => {
   return (
     <motion.header className="fixed top-0 md:mt-12 md:mr-12 right-0 z-20">
       <Transition className="fixed md:top-8 top-6 md:left-8 left-6 z-30">
-        <Link 
+        <Link
           href={"/"}
           onClick={() => trackLinkClick("/", "Logo/Home")}
           className="focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-black rounded"
@@ -50,7 +51,11 @@ const Header = ({ social }: HeaderProps) => {
         initial={false}
         animate={isActive ? "open" : "closed"}
         variants={variants}
-        className="absolute top-0 right-0 md:-top-6 md:-right-6 w-dvw md:w-[480px] h-dvh md:h-[calc(100dvh-2.5rem)] bg-[#65bccd]"
+        className={
+          cn("absolute top-0 right-0 md:-top-6 md:-right-6 w-dvw md:w-[480px] h-dvh md:h-[calc(100dvh-2.5rem)] bg-[#65bccd]",
+            isActive ? "" : "hidden",
+          )
+        }
       >
         {isActive && (
           <nav className="flex justify-between flex-col w-full h-full px-10 pt-[100px] pb-[50px]">
