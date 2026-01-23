@@ -8,6 +8,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Dynamic Project Pages** - Implemented dynamic routing for individual project detail pages at `/project/[alias]`
+- **Project Detail Pages** - Created comprehensive project detail pages with sections for:
+  - Overview with full project descriptions
+  - Goals and Motivation (structured object format)
+  - Tech Stack Used (pill-style display)
+  - Features (bullet list format)
+  - Challenges and solutions
+  - Interactive gallery with image descriptions
+  - Repositories section with GitHub and Live Demo links
+  - Outro section for project reflections
+- **Sticky Navigation** - Added minimal, classy sticky navigation sidebar for project detail pages with:
+  - "On this page" header
+  - Active section highlighting
+  - Smooth scroll to sections
+  - Auto-detection of available sections
+- **Interactive Project Gallery** - Created gallery component with:
+  - Horizontal scrolling layout
+  - Framer Motion animations for seamless transitions
+  - Full-screen image viewer with navigation
+  - Image descriptions on hover and in full-screen mode
+  - Keyboard navigation support
+- **Project Navigation** - Added bottom navigation component with:
+  - Next project button with circular navigation
+  - Expandable "View All Projects" grid
+  - Project cards with thumbnails and tech stack preview
+- **Contact Me Button** - Added email contact button for projects without GitHub or Live URLs
+- **Project List Page** - Created `/project` page displaying all enabled projects
+- **Enhanced Project Data Structure** - Updated project interface to support:
+  - Goals and Motivation as structured object (introduction, goals array, motivation)
+  - Gallery images with descriptions
+  - Features, challenges, and outro sections
+  - Demo section support (removed for now)
 - **Analytics Integration** - Added Umami Analytics and Google Analytics (GA4) support with environment variable configuration
 - **SEO Enhancements** - Implemented comprehensive SEO improvements including:
   - Enhanced metadata with Open Graph and Twitter Card support
@@ -47,6 +79,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Font** - Changed from Geist to Poppins font family
 - **Global Styles** - Completely redesigned global CSS with dark theme support and custom animations
 - **Next.js Config** - Added image remote patterns for external image sources
+- **Projects Component** - Added `showAll` prop to control displaying all projects vs show more/less functionality
+- **Project Page** - Updated `/project` page to automatically display all enabled projects without show more/less button
+- **HoverImage Component** - Updated to link to individual project detail pages instead of anchor links
+- **Project Data Structure** - Enhanced siteConfig.json with detailed project information including goals, features, challenges, galleries, and outros
 
 ### Fixed
 - **Performance** - Optimized bouncing hobbies animation with visibility detection and cached container sizes

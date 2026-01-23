@@ -14,6 +14,7 @@ export const HoverImage = ({
   shortDescription,
   projectDate,
   techStack,
+  alias,
 }: HoverImageProps) => {
   const ref = useRef<HTMLAnchorElement | null>(null);
 
@@ -46,7 +47,7 @@ export const HoverImage = ({
 
   return (
     <MotionLink
-      href={"#"}
+      href={`/project/${alias}`}
       ref={ref}
       onMouseMove={handleMouseMove}
       initial="initial"

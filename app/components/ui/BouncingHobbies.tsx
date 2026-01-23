@@ -17,9 +17,9 @@ const BouncingHobby = ({ hobby, emoji, containerRef, containerSize, isVisible }:
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const [isDragging, setIsDragging] = useState(false);
-  const velocityRef = useRef({ 
-    x: (Math.random() > 0.5 ? 1 : -1) * (0.3 + Math.random() * 0.4), 
-    y: (Math.random() > 0.5 ? 1 : -1) * (0.3 + Math.random() * 0.4) 
+  const velocityRef = useRef({
+    x: (Math.random() > 0.5 ? 1 : -1) * (0.3 + Math.random() * 0.4),
+    y: (Math.random() > 0.5 ? 1 : -1) * (0.3 + Math.random() * 0.4)
   });
   const positionRef = useRef({ x: 0, y: 0 });
   const elementSizeRef = useRef({ width: 80, height: 32 }); // Default fallback
@@ -54,7 +54,7 @@ const BouncingHobby = ({ hobby, emoji, containerRef, containerSize, isVisible }:
     const maxY = Math.max(0, containerSize.height - height);
     const startX = maxX > 0 ? Math.random() * maxX : 0;
     const startY = maxY > 0 ? Math.random() * maxY : 0;
-    
+
     positionRef.current = { x: startX, y: startY };
     x.set(startX);
     y.set(startY);
@@ -90,7 +90,7 @@ const BouncingHobby = ({ hobby, emoji, containerRef, containerSize, isVisible }:
 
     const animate = () => {
       if (!isRunning) return;
-      
+
       // Check if we should continue animating
       if (!containerRef.current || !elementRef.current || isDragging || !isVisible) {
         animationFrameRef.current = undefined;
@@ -223,11 +223,11 @@ const BouncingHobbies = ({ hobbies }: BouncingHobbiesProps) => {
     <div className="relative w-full h-full min-h-[150px]">
       <div ref={containerRef} className="relative w-full h-full overflow-hidden">
         {hobbies.map((hobby, index) => (
-          <BouncingHobby 
-            key={hobby.name} 
-            hobby={hobby.name} 
+          <BouncingHobby
+            key={hobby.name}
+            hobby={hobby.name}
             emoji={hobby.emoji}
-            index={index} 
+            index={index}
             containerRef={containerRef}
             containerSize={containerSize}
             isVisible={isVisible}
