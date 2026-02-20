@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Clock, ExternalLink, Youtube, Code2, BookOpen, Link2, Check, Copy } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, ExternalLink, Code2, BookOpen, Link2, Check, Copy } from "lucide-react";
 import { Blog } from "../../utils/interface";
 import { SlideIn, Transition } from "./Transitions";
 import { SectionHeading } from "./Typography";
@@ -177,9 +177,6 @@ export default function BlogContent({ blog }: BlogContentProps) {
   if (blog.codeSamples && blog.codeSamples.length > 0) {
     navItems.push({ id: "code-samples", label: "Code Examples" });
   }
-  if (blog.youtubeUrl) {
-    navItems.push({ id: "video", label: "Video Tutorial" });
-  }
   if (blog.resources && blog.resources.length > 0) {
     navItems.push({ id: "resources", label: "Resources" });
   }
@@ -188,15 +185,6 @@ export default function BlogContent({ blog }: BlogContentProps) {
   }
 
   const processedContent = processContent(blog.content || '');
-
-  // Extract YouTube video ID from URL
-  const getYouTubeVideoId = (url: string) => {
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-    const match = url.match(regExp);
-    return match && match[2].length === 11 ? match[2] : null;
-  };
-
-  const videoId = blog.youtubeUrl ? getYouTubeVideoId(blog.youtubeUrl) : null;
 
   return (
     <main className="relative min-h-screen">
@@ -435,40 +423,6 @@ export default function BlogContent({ blog }: BlogContentProps) {
               </Transition>
             </div>
           )}
-
-          {/* YouTube Video Section */}
-          {blog.youtubeUrl && videoId && (
-            <div id="video" className="mb-12">
-              <Transition>
-                <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4 flex items-center gap-2">
-                  <Youtube className="size-6" />
-                  Video Tutorial
-                </h2>
-                <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-white/10 bg-black/20">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${videoId}?modestbranding=1&rel=0`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    title={`${blog.title} - YouTube Video`}
-                    className="absolute inset-0 w-full h-full"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="mt-4">
-                  <a
-                    href={blog.youtubeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors duration-300"
-                  >
-                    <ExternalLink className="size-4" />
-                    <span>Watch on YouTube</span>
-                  </a>
-                </div>
-              </Transition>
-            </div>
-          )}
-
 
           {/* Resources Section */}
           {blog.resources && blog.resources.length > 0 && (

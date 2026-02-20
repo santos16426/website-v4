@@ -37,7 +37,7 @@ const About = ({ about }: AboutProps) => {
               </div>
             )}
             {about.music && (
-              <MusicPlayer youtubeUrl="https://www.youtube.com/watch?v=sNY_2TEmzho&list=RDsNY_2TEmzho&start_radio=1" />
+              <MusicPlayer />
             )}
             {about.hobby && about.hobbies && (
               <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition-all duration-300 min-h-[200px]">
