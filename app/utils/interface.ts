@@ -103,7 +103,6 @@ export interface Blog {
   tags?: string[];
   readTime?: string;
   _id?: string;
-  youtubeUrl?: string;
   sourceCodeUrl?: string;
   resources?: Array<{
     title: string;
