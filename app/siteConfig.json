@@ -25,12 +25,12 @@
     ],
     "avatar": {
       "public_id": "",
-      "url": "https://scontent.fmnl4-4.fna.fbcdn.net/v/t39.30808-6/612068682_10229607981295682_6080860891770249729_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=hykyeVpNQ1UQ7kNvwGzLUzF&_nc_oc=AdmalRE4UmgIhTsrJL6pQo9CFP3YIeLMkLgiXwSLSjIYmlMM3VWSWZjMVQez1rV1HrQ1YiiRf_XPgNP3rUJ0_zZJ&_nc_zt=23&_nc_ht=scontent.fmnl4-4.fna&_nc_gid=xZn5_XHqOSB1sou483oKug&oh=00_Afpp1-eAbm1TVP3gbs4DspfXizN33_yKCZ-_b7m5jKf_WQ&oe=6974FF1E"
+      "url": "/profile.jpg"
     },
     "alternateAvatars": [
       {
         "public_id": "",
-        "url": "https://scontent.fmnl4-4.fna.fbcdn.net/v/t39.30808-6/612068682_10229607981295682_6080860891770249729_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=hykyeVpNQ1UQ7kNvwGzLUzF&_nc_oc=AdmalRE4UmgIhTsrJL6pQo9CFP3YIeLMkLgiXwSLSjIYmlMM3VWSWZjMVQez1rV1HrQ1YiiRf_XPgNP3rUJ0_zZJ&_nc_zt=23&_nc_ht=scontent.fmnl4-4.fna&_nc_gid=xZn5_XHqOSB1sou483oKug&oh=00_Afpp1-eAbm1TVP3gbs4DspfXizN33_yKCZ-_b7m5jKf_WQ&oe=6974FF1E"
+        "url": "/profile.jpg"
       }
     ]
   },
@@ -1131,7 +1131,6 @@
           "description": "A collection of useful custom React hooks with TypeScript"
         }
       ],
-      "youtubeUrl": "https://www.youtube.com/watch?v=dpw9EHDh2bM",
       "relatedLinks": [
         {
           "title": "Advanced React Hooks Patterns",

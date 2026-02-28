@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Web Manifest** - Added `site.webmanifest` file for PWA support with app name, theme colors, and icons
 - **Performance Optimizations** - Implemented critical performance improvements:
   - Preconnect hints for Google Fonts (fonts.googleapis.com, fonts.gstatic.com)
-  - DNS prefetch for analytics and media resources (Google Analytics, Umami, YouTube)
+  - DNS prefetch for analytics and media resources (Google Analytics, Umami)
   - Font loading optimization with `display: swap` and reduced font weights (300-700)
   - Analytics scripts loaded with `lazyOnload` strategy to reduce critical path latency
 - **Security Headers** - Added security headers in Next.js config:
@@ -142,6 +142,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **HoverImage Component** - Updated to link to individual project detail pages instead of anchor links
 - **Project Data Structure** - Enhanced siteConfig.json with detailed project information including goals, features, challenges, galleries, and outros
 - **Project Galleries** - Removed duplicate placeholder images from project galleries, keeping one image per project for cleaner data structure
+
+### Removed
+- **YouTube** - Removed YouTube from blog (youtubeUrl, Video Tutorial section, getYouTubeVideoId), layout DNS prefetch for YouTube, Blog interface youtubeUrl, next.config img.youtube.com, and youtubeUrl from siteConfig blog entry.
 
 ### Fixed
 - **Metadata Export** - Restored missing `export const metadata` in root layout.tsx to fix page title display

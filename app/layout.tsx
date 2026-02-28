@@ -29,8 +29,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://cloud.umami.is" />
-        <link rel="dns-prefetch" href="https://img.youtube.com" />
-        <link rel="dns-prefetch" href="https://www.youtube.com" />
       </head>
       <body className={poppins.className}>
         <VariantProvider>{children}</VariantProvider>
