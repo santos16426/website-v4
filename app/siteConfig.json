@@ -426,68 +426,6 @@
       }
     },
     {
-      "name": "Split Bill App",
-      "alias": "split-bill-app",
-      "shortDescription": "Split bills with friends, track expenses, and settle up. A simple, fair, and hassle-free bill splitting application with smart receipt scanning and flexible splitting options.",
-      "fullDescription": "Ambag (Split Bill App) is a modern web application designed to make bill splitting effortless and transparent. Whether you're dining out with friends, splitting rent with roommates, or managing group expenses, Ambag simplifies the process with intelligent features like OCR receipt scanning, flexible splitting options, and automatic calculations.",
-      "goalsAndMotivation": {
-        "introduction": "Bill splitting can be awkward and time-consuming. Ambag was created to eliminate the stress and complexity around splitting expenses with friends, family, and colleagues.",
-        "goals": [
-          "Create an intuitive bill splitting experience that anyone can use",
-          "Implement OCR technology for instant receipt processing",
-          "Provide flexible splitting options (evenly, by share, by role, exact amount, custom)",
-          "Build transparent expense tracking for groups",
-          "Enable seamless settlement between group members"
-        ],
-        "motivation": "As someone who frequently dines out and travels with friends, I experienced firsthand how bill splitting can create awkward situations. Ambag was built to solve this real-world problem by combining modern web technologies with user-friendly design, making financial transparency and fairness effortless."
-      },
-      "githubUrl": "",
-      "liveUrl": "https://ambag-web-app.vercel.app/",
-      "_id": "split-bill-app",
-      "image": {
-        "public_id": "split-bill-app",
-        "url": "/projects/BudgetTracker.png"
-      },
-      "gallery": [
-        {
-          "public_id": "split-bill-app-1",
-          "url": "/projects/BudgetTracker.png",
-          "description": "Main dashboard showing group expenses and bill splitting interface"
-        }
-      ],
-      "features": [
-        "Smart receipt scanning with OCR technology",
-        "Flexible bill splitting options (evenly, by share, by role, exact amount, custom)",
-        "Group expense tracking and management",
-        "Automatic calculation and settlement",
-        "Real-time expense updates",
-        "User-friendly interface for seamless experience"
-      ],
-      "challenges": [
-        "Implementing accurate OCR receipt scanning required careful integration of image processing libraries and handling various receipt formats. I focused on creating a robust scanning system that could handle different image qualities and receipt layouts while maintaining accuracy.",
-        "Building flexible splitting logic that supports multiple splitting methods (evenly, by share, by role, exact amounts, and custom) was complex. I designed a modular system that could handle edge cases while keeping the user experience simple and intuitive."
-      ],
-      "highlights": [
-        "Instant receipt processing with OCR technology",
-        "Multiple splitting options for different scenarios",
-        "Transparent expense tracking for groups",
-        "Clean and intuitive user interface",
-        "Responsive design for mobile and desktop"
-      ],
-      "outro": "Ambag demonstrates how modern web technologies can solve everyday problems. The combination of OCR technology, flexible splitting algorithms, and user-centered design creates an application that genuinely improves how people handle shared expenses.\n\nThe project showcases the importance of understanding real-world user pain points and building solutions that are both powerful and easy to use.",
-      "details": {
-        "type": "Web Application",
-        "projectDate": "2026",
-        "techStack": [
-          "NextJS",
-          "TypeScript",
-          "TailwindCSS",
-          "OCR Technology"
-        ]
-      },
-      "disabled": false
-    },
-    {
       "name": "Therapy Clinic Management System",
       "alias": "therapy-clinic",
       "shortDescription": "A comprehensive case study for therapy clinic management system. Streamlines patient records, appointments, and clinic operations with an intuitive interface.",
@@ -564,6 +502,69 @@
         ]
       }
     },
+    {
+      "name": "Split Bill App",
+      "alias": "split-bill-app",
+      "shortDescription": "Split bills with friends, track expenses, and settle up. A simple, fair, and hassle-free bill splitting application with smart receipt scanning and flexible splitting options.",
+      "fullDescription": "Ambag (Split Bill App) is a modern web application designed to make bill splitting effortless and transparent. Whether you're dining out with friends, splitting rent with roommates, or managing group expenses, Ambag simplifies the process with intelligent features like OCR receipt scanning, flexible splitting options, and automatic calculations.",
+      "goalsAndMotivation": {
+        "introduction": "Bill splitting can be awkward and time-consuming. Ambag was created to eliminate the stress and complexity around splitting expenses with friends, family, and colleagues.",
+        "goals": [
+          "Create an intuitive bill splitting experience that anyone can use",
+          "Implement OCR technology for instant receipt processing",
+          "Provide flexible splitting options (evenly, by share, by role, exact amount, custom)",
+          "Build transparent expense tracking for groups",
+          "Enable seamless settlement between group members"
+        ],
+        "motivation": "As someone who frequently dines out and travels with friends, I experienced firsthand how bill splitting can create awkward situations. Ambag was built to solve this real-world problem by combining modern web technologies with user-friendly design, making financial transparency and fairness effortless."
+      },
+      "githubUrl": "",
+      "liveUrl": "https://ambag-web-app.vercel.app/",
+      "_id": "split-bill-app",
+      "image": {
+        "public_id": "split-bill-app",
+        "url": "/projects/BudgetTracker.png"
+      },
+      "gallery": [
+        {
+          "public_id": "split-bill-app-1",
+          "url": "/projects/BudgetTracker.png",
+          "description": "Main dashboard showing group expenses and bill splitting interface"
+        }
+      ],
+      "features": [
+        "Smart receipt scanning with OCR technology",
+        "Flexible bill splitting options (evenly, by share, by role, exact amount, custom)",
+        "Group expense tracking and management",
+        "Automatic calculation and settlement",
+        "Real-time expense updates",
+        "User-friendly interface for seamless experience"
+      ],
+      "challenges": [
+        "Implementing accurate OCR receipt scanning required careful integration of image processing libraries and handling various receipt formats. I focused on creating a robust scanning system that could handle different image qualities and receipt layouts while maintaining accuracy.",
+        "Building flexible splitting logic that supports multiple splitting methods (evenly, by share, by role, exact amounts, and custom) was complex. I designed a modular system that could handle edge cases while keeping the user experience simple and intuitive."
+      ],
+      "highlights": [
+        "Instant receipt processing with OCR technology",
+        "Multiple splitting options for different scenarios",
+        "Transparent expense tracking for groups",
+        "Clean and intuitive user interface",
+        "Responsive design for mobile and desktop"
+      ],
+      "outro": "Ambag demonstrates how modern web technologies can solve everyday problems. The combination of OCR technology, flexible splitting algorithms, and user-centered design creates an application that genuinely improves how people handle shared expenses.\n\nThe project showcases the importance of understanding real-world user pain points and building solutions that are both powerful and easy to use.",
+      "details": {
+        "type": "Web Application",
+        "projectDate": "2026",
+        "techStack": [
+          "NextJS",
+          "TypeScript",
+          "TailwindCSS",
+          "OCR Technology"
+        ]
+      },
+      "disabled": false
+    },
+
     {
       "name": "Real Estate",
       "alias": "real-estate",

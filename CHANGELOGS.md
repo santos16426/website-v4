@@ -124,6 +124,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - **siteConfig.json** - EMR project copy and structure; new Construction Firm project entry; TherapyClinic.png updated
+- **Project list order** - Reorder projects in siteConfig (Split Bill App after Therapy Clinic)
 - **Font Loading** - Optimized Poppins font loading with reduced weights (300-700), display swap, and fallback fonts
 - **Analytics Script Loading** - Changed analytics scripts from `afterInteractive` to `lazyOnload` strategy for better performance
 - **Site Description** - Enhanced site description to include "Billy Joe Santos" for better SEO discoverability
