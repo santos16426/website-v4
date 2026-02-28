@@ -255,6 +255,254 @@
   ],
   "projects": [
     {
+      "name": "EMR System",
+      "alias": "emr-system",
+      "shortDescription": "A modern electronic medical record system that helps clinics manage patients, appointments, and care—all in one secure place.",
+      "fullDescription": "The EMR System is a web-based electronic medical record platform built for healthcare providers and clinics. It streamlines daily workflows by centralizing patient information, scheduling, and clinical notes in a single, secure application—so staff can focus on patient care instead of paperwork.",
+      "goalsAndMotivation": {
+        "introduction": "Clinics and small practices often juggle paper charts, spreadsheets, and scattered tools—which makes it harder to give patients the attention they deserve. This project aimed to build an EMR that feels straightforward for staff while keeping patient data safe and organized.",
+        "goals": [
+          "Centralize patient records, appointments, and clinical notes in one secure platform",
+          "Provide an intuitive interface so staff can find information quickly without lengthy training",
+          "Support appointment scheduling and reminders to reduce no-shows and double-booking",
+          "Ensure data privacy and security with proper authentication and access controls",
+          "Make the system accessible from the web so clinics can work from any device"
+        ],
+        "motivation": "I wanted to create an EMR that actually fits how small clinics work—affordable, easy to adopt, and focused on the day-to-day tasks that matter most. The goal was to help healthcare providers spend less time on admin and more time with their patients."
+      },
+      "githubUrl": "",
+      "liveUrl": "https://emr-uat.vercel.app/",
+      "_id": "emr-system",
+      "image": {
+        "public_id": "emr-system",
+        "url": "/projects/EMR.png"
+      },
+      "gallery": [
+        {
+          "public_id": "emr-system-1",
+          "url": "/projects/EMR.png",
+          "description": "Landing page of the EMR System"
+        },
+        {
+          "public_id": "emr-system-2",
+          "url": "/projects/emr-gallery1.png",
+          "description": "Features of the EMR System"
+        },
+        {
+          "public_id": "emr-system-3",
+          "url": "/projects/emr-gallery2.png",
+          "description": "Data Privacy and Security of the EMR System"
+        },
+        {
+          "public_id": "emr-system-4",
+          "url": "/projects/emr-gallery3.png",
+          "description": "Login page of the EMR System"
+        },
+        {
+          "public_id": "emr-system-5",
+          "url": "/projects/emr-gallery4.png",
+          "description": "Signup/Register page of the EMR System"
+        },
+        {
+          "public_id": "emr-system-6",
+          "url": "/projects/emr-gallery5.png",
+          "description": "Appointment page of the EMR System"
+        }
+      ],
+      "features": [
+        "Patient management—store and search patient profiles, contact details, and medical history in one place",
+        "Appointment scheduling—book, view, and manage appointments with a clear calendar view to avoid conflicts",
+        "Secure authentication—login and registration with role-based access so only authorized staff see sensitive data",
+        "Data privacy and security—encryption and access controls to protect patient information and meet privacy expectations",
+        "Web-based access—use the system from any device with a browser, no heavy installs or IT setup",
+        "Clean, focused UI—screens designed around common tasks so staff can work quickly without getting lost",
+        "HIPAA compliant—built with safeguards and practices that support compliance with healthcare privacy and security requirements",
+        "Mobile web ready—responsive layout so staff can check schedules and key info on phones and tablets when away from the desk",
+        "Multiple consultation forms—create and use different form templates for various visit types and specialties"
+      ],
+      "challenges": [
+        "Encrypting patient records end-to-end while keeping the app usable required choosing the right approach—I implemented encryption for sensitive fields and ensured keys and data handling align with HIPAA expectations so records stay protected without slowing down daily workflows.",
+        "Securing data at rest meant designing how data is stored in the database and in any file storage—encryption at rest, access controls, and audit trails were implemented so that even if storage is accessed, patient data remains protected and traceable.",
+        "Building complex multi-step and multi-form consultation flows was tricky—different visit types needed different fields and validation. I structured reusable form components and state so clinics can maintain several form types without duplicating logic or sacrificing validation.",
+        "Session handling had to balance security and usability—short timeouts and secure cookie settings reduce risk, while clear session refresh and login persistence keep staff from being logged out mid-task. I focused on secure token handling and session invalidation on logout.",
+        "File upload and security required validating file types, size limits, and scanning for malicious content before storing—uploads are isolated, access-controlled, and tied to the right patient and user so only authorized staff can view or download attachments.",
+        "Implementing RBAC for assigning staff and secretaries meant defining clear roles (e.g. doctor, secretary, admin) and permissions—who can view or edit what, and who can assign or manage other users. I built role checks into the API and UI so access stays consistent and auditable."
+      ],
+      "highlights": [
+        "Printable prescriptions—generate and print prescriptions directly from the system for patients to take to the pharmacy",
+        "Lab request forms—create and print lab request slips so doctors can order tests and track results in one place",
+        "Medical certificate and clearance—issue and print medical certificates and clearances with clinic branding and doctor signature",
+        "Appointment management—full scheduling: book, reschedule, cancel, and view appointments with conflict prevention and a clear calendar",
+        "Multiple forms for doctors—support a variety of consultation and clinical forms so different specialties and visit types are covered",
+        "Staff and secretary assignment—assign and manage staff/secretary roles with RBAC so the right people have the right access (scheduling, records, forms)"
+      ],
+      "outro": "The EMR System shows how a well-structured web app can support real clinical workflows—from prescriptions and lab requests to certificates and appointments—without getting in the way. Tackling encryption, data-at-rest security, RBAC, and flexible forms reinforced how much thought goes into building something that is both usable and trustworthy for healthcare.\n\nIf you run a clinic or are curious how we approached security and multi-form design, feel free to reach out or try the live demo.",
+      "details": {
+        "type": "EMR System",
+        "projectDate": "2026",
+        "techStack": [
+          "NextJS",
+          "TypeScript",
+          "TailwindCSS",
+          "NodeJS",
+          "PostgreSQL",
+          "Rails",
+          "Cryptography"
+        ]
+      }
+    },
+    {
+      "name": "Construction Firm",
+      "alias": "construction-firm",
+      "shortDescription": "A marketing and portfolio site for a construction company—showcasing services, projects, and making it easy for clients to get in touch.",
+      "fullDescription": "Construction Firm is a full-web marketing and portfolio site built for a construction company. It highlights their services (commercial, industrial, civil), featured residential projects, and trust-building differentiators—with a clear path for visitors to request quotes and contact the team. Desktop-first, modern, and built for lead generation.",
+      "goalsAndMotivation": {
+        "introduction": "Construction companies need an online presence that reflects their capability and makes it simple for potential clients to explore work and reach out. This project aimed to deliver a professional marketing site that showcases projects and services while driving contact and quote requests.",
+        "goals": [
+          "Showcase services (commercial development, industrial logistics, civil infrastructure) and residential project types",
+          "Present featured projects with clear categories (townhouse, subdivision, luxury) and compelling copy",
+          "Build trust with a “why choose us” section (seismic safety, clear budgeting, on-time delivery, bespoke design)",
+          "Include social proof with testimonials and ratings",
+          "Provide a clear contact flow: get quote, call, WhatsApp, and a contact form"
+        ],
+        "motivation": "I wanted to build a polished, conversion-focused marketing site that a real construction firm could use—emphasizing clarity, credibility, and ease of contact without backend complexity, using only the front-end stack."
+      },
+      "githubUrl": "https://github.com/santos16426/construction-firm-fe",
+      "liveUrl": "https://construction-firm-fe.vercel.app/",
+      "_id": "construction-firm",
+      "image": {
+        "public_id": "construction-firm",
+        "url": "/projects/ConstructionFirm.png"
+      },
+      "gallery": [
+        {
+          "public_id": "construction-firm-1",
+          "url": "/projects/construction-gallery1.png",
+          "description": "Construction Firm landing and hero section"
+        },
+        {
+          "public_id": "construction-firm-2",
+          "url": "/projects/construction-gallery2.png",
+          "description": "Services and project showcase"
+        },
+        {
+          "public_id": "construction-firm-3",
+          "url": "/projects/construction-gallery3.png",
+          "description": "Featured projects and trust section"
+        },
+        {
+          "public_id": "construction-firm-4",
+          "url": "/projects/construction-gallery4.png",
+          "description": "Contact and get quote section"
+        }
+      ],
+      "features": [
+        "Service showcase—commercial development, industrial logistics, and civil infrastructure with clear value propositions",
+        "Featured projects—filterable project gallery (townhouse, subdivision, luxury) with descriptions and locations",
+        "Trust and differentiators—seismic safety, clear budgeting, on-time delivery, and bespoke design messaging",
+        "Testimonials and ratings—social proof section with client quotes and a visible rating (e.g. 4.9/5)",
+        "Contact and lead capture—get quote CTA, phone, WhatsApp, and a contact form for inquiries",
+        "Smooth, modern UI—animations and transitions with Framer Motion for a polished marketing feel"
+      ],
+      "challenges": [
+        "Keeping the site full-web and marketing-only meant focusing on performance and SEO—structure, headings, and copy were tuned so the site loads fast and reads well for both users and search engines.",
+        "Designing sections that convert (services, projects, trust, contact) required a clear hierarchy and CTAs—I balanced information density with focus so visitors can skim or dive in and still find the next step."
+      ],
+      "highlights": [
+        "Full-web marketing site—no backend app logic; focused on showcasing and contact",
+        "Next.js and Tailwind for fast, responsive pages and consistent styling",
+        "Framer Motion for scroll and interaction animations that elevate the brand feel",
+        "Clear path from awareness to contact—quote requests and multiple contact options"
+      ],
+      "outro": "Construction Firm is a focused example of a marketing and portfolio site done well—services, projects, trust, and contact in one cohesive flow. Built with Next.js, Tailwind, and Framer Motion, it stays full-web and easy to maintain while giving a construction company a professional, conversion-ready presence online.",
+      "details": {
+        "type": "Marketing / Portfolio",
+        "projectDate": "2026",
+        "techStack": [
+          "NextJS",
+          "TailwindCSS",
+          "Framer Motion"
+        ]
+      }
+    },
+    {
+      "name": "Therapy Clinic Management System",
+      "alias": "therapy-clinic",
+      "shortDescription": "A comprehensive case study for therapy clinic management system. Streamlines patient records, appointments, and clinic operations with an intuitive interface.",
+      "fullDescription": "This Therapy Clinic Management System is a full-stack web application designed to modernize healthcare facility operations. The system provides a centralized platform for managing patient information, scheduling appointments, tracking treatment progress, and handling administrative tasks. Built with modern web technologies, it offers a seamless experience for both healthcare providers and administrative staff, reducing paperwork and improving operational efficiency.",
+      "goalsAndMotivation": {
+        "introduction": "The primary goal of this project was to create a modern, efficient solution for therapy clinics struggling with outdated paper-based systems and fragmented digital tools. Many healthcare facilities still rely on manual processes that lead to scheduling conflicts, lost patient records, and administrative overhead.",
+        "goals": [
+          "Streamline patient management and reduce administrative burden",
+          "Improve appointment scheduling accuracy and reduce no-shows",
+          "Provide secure, HIPAA-compliant data storage",
+          "Offer an intuitive interface accessible to all staff members",
+          "Enable real-time updates and notifications for better coordination"
+        ],
+        "motivation": "Having worked with healthcare facilities in the past, I've witnessed firsthand the inefficiencies caused by outdated systems. This project was born from a desire to create a solution that could genuinely improve the daily operations of therapy clinics while maintaining the highest standards of data security and user experience."
+      },
+      "githubUrl": "",
+      "liveUrl": "https://sunshine-learning.vercel.app/",
+      "_id": "therapy-clinic",
+      "image": {
+        "public_id": "therapy-clinic",
+        "url": "/projects/TherapyClinic.png"
+      },
+      "gallery": [
+        {
+          "public_id": "therapy-clinic-1",
+          "url": "/projects/TherapyClinic.png",
+          "description": "Main dashboard showing patient overview and upcoming appointments with a clean, intuitive interface"
+        },
+        {
+          "public_id": "therapy-clinic-2",
+          "url": "/projects/therapy-gallery1.png",
+          "description": "Interactive chatbot"
+        },
+        {
+          "public_id": "therapy-clinic-3",
+          "url": "/projects/therapy-gallery2.png",
+          "description": "Login page for admin/secretary"
+        },
+        {
+          "public_id": "therapy-clinic-4",
+          "url": "/projects/therapy-gallery3.png",
+          "description": "Dashboard for admin/secretary"
+        }
+      ],
+      "features": [
+        "Patient record management with secure data storage",
+        "Appointment scheduling and calendar integration",
+        "Treatment progress tracking and history",
+        "User authentication and role-based access control",
+        "Responsive design for desktop and mobile devices",
+        "Real-time notifications for appointments and updates"
+      ],
+      "challenges": [
+        "Ensuring HIPAA compliance was one of the biggest challenges. I had to implement strict data encryption, access controls, and audit logging. I solved this by using industry-standard encryption protocols, implementing role-based access control (RBAC), and creating comprehensive audit trails for all data access.",
+        "Creating an intuitive interface that works for both technical and non-technical users required extensive user research and iterative design. I conducted interviews with clinic staff to understand their workflows and pain points, then designed the UI with clear visual hierarchy and minimal cognitive load.",
+        "Implementing real-time updates without compromising performance was tricky. I used WebSocket connections with connection pooling and implemented efficient data caching strategies to ensure smooth real-time updates even with multiple concurrent users."
+      ],
+      "demo": [
+        {
+          "type": "image",
+          "url": "/projects/TherapyClinic.png",
+          "caption": "Main dashboard showing patient overview and upcoming appointments"
+        }
+      ],
+      "outro": "Building this Therapy Clinic Management System was a rewarding experience that taught me a lot about healthcare technology requirements and the importance of user-centered design. The project reinforced my belief that well-designed software can significantly improve daily operations in any industry.\n\nWhile this is a case study, the architecture and design patterns used here are production-ready and could be extended to support additional features like billing, insurance integration, and telemedicine capabilities.",
+      "details": {
+        "type": "Case Study",
+        "projectDate": "2026",
+        "techStack": [
+          "NextJS",
+          "TypeScript",
+          "TailwindCSS",
+          "NodeJS"
+        ]
+      }
+    },
+    {
       "name": "Split Bill App",
       "alias": "split-bill-app",
       "shortDescription": "Split bills with friends, track expenses, and settle up. A simple, fair, and hassle-free bill splitting application with smart receipt scanning and flexible splitting options.",
@@ -316,68 +564,7 @@
       },
       "disabled": false
     },
-    {
-      "name": "Therapy Clinic Management System",
-      "alias": "therapy-clinic",
-      "shortDescription": "A comprehensive case study for therapy clinic management system. Streamlines patient records, appointments, and clinic operations with an intuitive interface.",
-      "fullDescription": "This Therapy Clinic Management System is a full-stack web application designed to modernize healthcare facility operations. The system provides a centralized platform for managing patient information, scheduling appointments, tracking treatment progress, and handling administrative tasks. Built with modern web technologies, it offers a seamless experience for both healthcare providers and administrative staff, reducing paperwork and improving operational efficiency.",
-      "goalsAndMotivation": {
-        "introduction": "The primary goal of this project was to create a modern, efficient solution for therapy clinics struggling with outdated paper-based systems and fragmented digital tools. Many healthcare facilities still rely on manual processes that lead to scheduling conflicts, lost patient records, and administrative overhead.",
-        "goals": [
-          "Streamline patient management and reduce administrative burden",
-          "Improve appointment scheduling accuracy and reduce no-shows",
-          "Provide secure, HIPAA-compliant data storage",
-          "Offer an intuitive interface accessible to all staff members",
-          "Enable real-time updates and notifications for better coordination"
-        ],
-        "motivation": "Having worked with healthcare facilities in the past, I've witnessed firsthand the inefficiencies caused by outdated systems. This project was born from a desire to create a solution that could genuinely improve the daily operations of therapy clinics while maintaining the highest standards of data security and user experience."
-      },
-      "githubUrl": "",
-      "liveUrl": "",
-      "_id": "therapy-clinic",
-      "image": {
-        "public_id": "therapy-clinic",
-        "url": "/projects/TherapyClinic.png"
-      },
-      "gallery": [
-        {
-          "public_id": "therapy-clinic-1",
-          "url": "/projects/TherapyClinic.png",
-          "description": "Main dashboard showing patient overview and upcoming appointments with a clean, intuitive interface"
-        }
-      ],
-      "features": [
-        "Patient record management with secure data storage",
-        "Appointment scheduling and calendar integration",
-        "Treatment progress tracking and history",
-        "User authentication and role-based access control",
-        "Responsive design for desktop and mobile devices",
-        "Real-time notifications for appointments and updates"
-      ],
-      "challenges": [
-        "Ensuring HIPAA compliance was one of the biggest challenges. I had to implement strict data encryption, access controls, and audit logging. I solved this by using industry-standard encryption protocols, implementing role-based access control (RBAC), and creating comprehensive audit trails for all data access.",
-        "Creating an intuitive interface that works for both technical and non-technical users required extensive user research and iterative design. I conducted interviews with clinic staff to understand their workflows and pain points, then designed the UI with clear visual hierarchy and minimal cognitive load.",
-        "Implementing real-time updates without compromising performance was tricky. I used WebSocket connections with connection pooling and implemented efficient data caching strategies to ensure smooth real-time updates even with multiple concurrent users."
-      ],
-      "demo": [
-        {
-          "type": "image",
-          "url": "/projects/TherapyClinic.png",
-          "caption": "Main dashboard showing patient overview and upcoming appointments"
-        }
-      ],
-      "outro": "Building this Therapy Clinic Management System was a rewarding experience that taught me a lot about healthcare technology requirements and the importance of user-centered design. The project reinforced my belief that well-designed software can significantly improve daily operations in any industry.\n\nWhile this is a case study, the architecture and design patterns used here are production-ready and could be extended to support additional features like billing, insurance integration, and telemedicine capabilities.",
-      "details": {
-        "type": "Case Study",
-        "projectDate": "2026",
-        "techStack": [
-          "NextJS",
-          "TypeScript",
-          "TailwindCSS",
-          "NodeJS"
-        ]
-      }
-    },
+
     {
       "name": "Real Estate",
       "alias": "real-estate",
