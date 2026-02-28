@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Construction Firm project** - New portfolio entry for the Construction Firm marketing site (Next.js, Tailwind, Framer Motion) with full blog content, gallery (construction-gallery1–4), and project assets
+- **EMR System project content** - Expanded EMR project with short/full descriptions, goals and motivation, features (HIPAA compliant, mobile web, consultation forms, prescriptions, lab requests, certificates, RBAC), challenges (encryption, data at rest, multi-forms, sessions, file upload, RBAC), highlights, and outro
+- **Project gallery assets** - Added EMR and Construction Firm gallery images (emr-gallery1–5, construction-gallery1–4), EMR.png, ConstructionFirm.png, and therapy gallery images (therapy-gallery1–3)
 - **Web Manifest** - Added `site.webmanifest` file for PWA support with app name, theme colors, and icons
 - **Performance Optimizations** - Implemented critical performance improvements:
   - Preconnect hints for Google Fonts (fonts.googleapis.com, fonts.gstatic.com)
@@ -120,6 +123,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Key-tile button animations
 
 ### Changed
+- **siteConfig.json** - EMR project copy and structure; new Construction Firm project entry; TherapyClinic.png updated
 - **Font Loading** - Optimized Poppins font loading with reduced weights (300-700), display swap, and fallback fonts
 - **Analytics Script Loading** - Changed analytics scripts from `afterInteractive` to `lazyOnload` strategy for better performance
 - **Site Description** - Enhanced site description to include "Billy Joe Santos" for better SEO discoverability
