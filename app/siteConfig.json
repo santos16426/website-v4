@@ -519,7 +519,7 @@
         "motivation": "As someone who frequently dines out and travels with friends, I experienced firsthand how bill splitting can create awkward situations. Ambag was built to solve this real-world problem by combining modern web technologies with user-friendly design, making financial transparency and fairness effortless."
       },
       "githubUrl": "",
-      "liveUrl": "https://ambag-web-app.vercel.app/",
+      "liveUrl": "https://ambag-uat.vercel.app/",
       "_id": "split-bill-app",
       "image": {
         "public_id": "split-bill-app",
@@ -529,7 +529,27 @@
         {
           "public_id": "split-bill-app-1",
           "url": "/projects/BudgetTracker.png",
-          "description": "Main dashboard showing group expenses and bill splitting interface"
+          "description": "Marketing page with featured properties and search functionality"
+        },
+        {
+          "public_id": "split-bill-app-2",
+          "url": "/projects/bill1.png",
+          "description": "Dashboard showing group expenses and bill splitting interface"
+        },
+        {
+          "public_id": "split-bill-app-3",
+          "url": "/projects/bill2.png",
+          "description": "Group page details showing members and expenses"
+        },
+        {
+          "public_id": "split-bill-app-4",
+          "url": "/projects/bill3.png",
+          "description": "Expense form, add new expense, split bill options"
+        },
+        {
+          "public_id": "split-bill-app-4",
+          "url": "/projects/bill5.png",
+          "description": "Add settlement details, confirm settlement"
         }
       ],
       "features": [
