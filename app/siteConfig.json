@@ -271,7 +271,7 @@
         "motivation": "I wanted to create an EMR that actually fits how small clinics work—affordable, easy to adopt, and focused on the day-to-day tasks that matter most. The goal was to help healthcare providers spend less time on admin and more time with their patients."
       },
       "githubUrl": "",
-      "liveUrl": "https://emr-uat.vercel.app/",
+      "liveUrl": "https://konsultech.app/",
       "_id": "emr-system",
       "image": {
         "public_id": "emr-system",
@@ -368,7 +368,7 @@
         "motivation": "I wanted to build a polished, conversion-focused marketing site that a real construction firm could use—emphasizing clarity, credibility, and ease of contact without backend complexity, using only the front-end stack."
       },
       "githubUrl": "https://github.com/santos16426/construction-firm-fe",
-      "liveUrl": "https://construction-firm-fe.vercel.app/",
+      "liveUrl": "https://construction-firm.joelucas.dev/",
       "_id": "construction-firm",
       "image": {
         "public_id": "construction-firm",
@@ -519,7 +519,7 @@
         "motivation": "As someone who frequently dines out and travels with friends, I experienced firsthand how bill splitting can create awkward situations. Ambag was built to solve this real-world problem by combining modern web technologies with user-friendly design, making financial transparency and fairness effortless."
       },
       "githubUrl": "",
-      "liveUrl": "https://ambag-uat.vercel.app/",
+      "liveUrl": "https://ambag.joelucas.dev/",
       "_id": "split-bill-app",
       "image": {
         "public_id": "split-bill-app",
@@ -602,7 +602,7 @@
         "motivation": "Having experienced the frustration of using outdated real estate platforms, I was motivated to build something better. This project allowed me to combine my passion for clean UI/UX design with modern web technologies to create a platform that truly serves property seekers."
       },
       "githubUrl": "https://github.com/santos16426/real-estate",
-      "liveUrl": "https://epicestate.vercel.app/",
+      "liveUrl": "https://epicestate.joelucas.dev/",
       "_id": "real-estate",
       "image": {
         "public_id": "real-estate",
@@ -710,7 +710,7 @@
         "motivation": "As someone who struggles with time management, I wanted to build a Pomodoro timer that I would actually enjoy using. This project was an opportunity to create a tool that combines functionality with beautiful design, making productivity more engaging."
       },
       "githubUrl": "https://github.com/santos16426/pomodoro",
-      "liveUrl": "https://pomdr.vercel.app/",
+      "liveUrl": "https://pomdr.joelucas.dev/",
       "_id": "pomodoro",
       "image": {
         "public_id": "pomodoro",
