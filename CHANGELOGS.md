@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Planera project** — Portfolio entry for Planera (PH-first event websites, builder, RSVP, wishlist, Organizer HQ) with full case-study copy, tech stack, and gallery screenshots (`Planera.png`, `planera-gallery1`–`6`) captured from the local product
 - **Construction Firm project** - New portfolio entry for the Construction Firm marketing site (Next.js, Tailwind, Framer Motion) with full blog content, gallery (construction-gallery1–4), and project assets
 - **EMR System project content** - Expanded EMR project with short/full descriptions, goals and motivation, features (HIPAA compliant, mobile web, consultation forms, prescriptions, lab requests, certificates, RBAC), challenges (encryption, data at rest, multi-forms, sessions, file upload, RBAC), highlights, and outro
 - **Project gallery assets** - Added EMR and Construction Firm gallery images (emr-gallery1–5, construction-gallery1–4), EMR.png, ConstructionFirm.png, and therapy gallery images (therapy-gallery1–3)

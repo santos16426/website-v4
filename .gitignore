@@ -42,3 +42,10 @@ next-env.d.ts
 
 # cursor
 .cursor/
+
+# Baxen Co. local agent wiring (scripts/link-baxen-agents.sh) — never push
+.cursor/skills
+.cursor/agents
+.cursor/rules
+/AGENTS.md
+/baxen-co.code-workspace
