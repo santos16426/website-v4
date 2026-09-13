@@ -397,8 +397,8 @@
         ],
         "motivation": "I wanted a finance desk that matches how money actually moves here—peso amounts, mixed accounts, credit and pay-later schedules—without turning into a bank or a group bill-split product. Moolah is built so you can see today's position, log what happened, and plan what is coming next with clarity you own."
       },
-      "githubUrl": "https://github.com/santos16426/moolah-web",
-      "liveUrl": "https://moolah-kappa.vercel.app/",
+      "githubUrl": "",
+      "liveUrl": "https://moolah.joelucas.dev/",
       "_id": "moolah",
       "image": {
         "public_id": "moolah",
