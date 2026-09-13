@@ -285,6 +285,200 @@
   ],
   "projects": [
     {
+      "name": "EMR System",
+      "alias": "emr-system",
+      "shortDescription": "A modern electronic medical record system that helps clinics manage patients, appointments, and care—all in one secure place.",
+      "fullDescription": "The EMR System is a web-based electronic medical record platform built for healthcare providers and clinics. It streamlines daily workflows by centralizing patient information, scheduling, and clinical notes in a single, secure application—so staff can focus on patient care instead of paperwork.",
+      "goalsAndMotivation": {
+        "introduction": "Clinics and small practices often juggle paper charts, spreadsheets, and scattered tools—which makes it harder to give patients the attention they deserve. This project aimed to build an EMR that feels straightforward for staff while keeping patient data safe and organized.",
+        "goals": [
+          "Centralize patient records, appointments, and clinical notes in one secure platform",
+          "Provide an intuitive interface so staff can find information quickly without lengthy training",
+          "Support appointment scheduling and reminders to reduce no-shows and double-booking",
+          "Ensure data privacy and security with proper authentication and access controls",
+          "Make the system accessible from the web so clinics can work from any device"
+        ],
+        "motivation": "I wanted to create an EMR that actually fits how small clinics work—affordable, easy to adopt, and focused on the day-to-day tasks that matter most. The goal was to help healthcare providers spend less time on admin and more time with their patients."
+      },
+      "githubUrl": "",
+      "liveUrl": "https://konsultech.app/",
+      "_id": "emr-system",
+      "image": {
+        "public_id": "emr-system",
+        "url": "/projects/EMR.png"
+      },
+      "gallery": [
+        {
+          "public_id": "emr-system-1",
+          "url": "/projects/EMR.png",
+          "description": "Landing page of the EMR System"
+        },
+        {
+          "public_id": "emr-system-2",
+          "url": "/projects/emr-gallery1.png",
+          "description": "Features of the EMR System"
+        },
+        {
+          "public_id": "emr-system-3",
+          "url": "/projects/emr-gallery2.png",
+          "description": "Data Privacy and Security of the EMR System"
+        },
+        {
+          "public_id": "emr-system-4",
+          "url": "/projects/emr-gallery3.png",
+          "description": "Login page of the EMR System"
+        },
+        {
+          "public_id": "emr-system-5",
+          "url": "/projects/emr-gallery4.png",
+          "description": "Signup/Register page of the EMR System"
+        },
+        {
+          "public_id": "emr-system-6",
+          "url": "/projects/emr-gallery5.png",
+          "description": "Appointment page of the EMR System"
+        }
+      ],
+      "features": [
+        "Patient management—store and search patient profiles, contact details, and medical history in one place",
+        "Appointment scheduling—book, view, and manage appointments with a clear calendar view to avoid conflicts",
+        "Secure authentication—login and registration with role-based access so only authorized staff see sensitive data",
+        "Data privacy and security—encryption and access controls to protect patient information and meet privacy expectations",
+        "Web-based access—use the system from any device with a browser, no heavy installs or IT setup",
+        "Clean, focused UI—screens designed around common tasks so staff can work quickly without getting lost",
+        "HIPAA compliant—built with safeguards and practices that support compliance with healthcare privacy and security requirements",
+        "Mobile web ready—responsive layout so staff can check schedules and key info on phones and tablets when away from the desk",
+        "Multiple consultation forms—create and use different form templates for various visit types and specialties"
+      ],
+      "challenges": [
+        "Encrypting patient records end-to-end while keeping the app usable required choosing the right approach—I implemented encryption for sensitive fields and ensured keys and data handling align with HIPAA expectations so records stay protected without slowing down daily workflows.",
+        "Securing data at rest meant designing how data is stored in the database and in any file storage—encryption at rest, access controls, and audit trails were implemented so that even if storage is accessed, patient data remains protected and traceable.",
+        "Building complex multi-step and multi-form consultation flows was tricky—different visit types needed different fields and validation. I structured reusable form components and state so clinics can maintain several form types without duplicating logic or sacrificing validation.",
+        "Session handling had to balance security and usability—short timeouts and secure cookie settings reduce risk, while clear session refresh and login persistence keep staff from being logged out mid-task. I focused on secure token handling and session invalidation on logout.",
+        "File upload and security required validating file types, size limits, and scanning for malicious content before storing—uploads are isolated, access-controlled, and tied to the right patient and user so only authorized staff can view or download attachments.",
+        "Implementing RBAC for assigning staff and secretaries meant defining clear roles (e.g. doctor, secretary, admin) and permissions—who can view or edit what, and who can assign or manage other users. I built role checks into the API and UI so access stays consistent and auditable."
+      ],
+      "highlights": [
+        "Printable prescriptions—generate and print prescriptions directly from the system for patients to take to the pharmacy",
+        "Lab request forms—create and print lab request slips so doctors can order tests and track results in one place",
+        "Medical certificate and clearance—issue and print medical certificates and clearances with clinic branding and doctor signature",
+        "Appointment management—full scheduling: book, reschedule, cancel, and view appointments with conflict prevention and a clear calendar",
+        "Multiple forms for doctors—support a variety of consultation and clinical forms so different specialties and visit types are covered",
+        "Staff and secretary assignment—assign and manage staff/secretary roles with RBAC so the right people have the right access (scheduling, records, forms)"
+      ],
+      "outro": "The EMR System shows how a well-structured web app can support real clinical workflows—from prescriptions and lab requests to certificates and appointments—without getting in the way. Tackling encryption, data-at-rest security, RBAC, and flexible forms reinforced how much thought goes into building something that is both usable and trustworthy for healthcare.\n\nIf you run a clinic or are curious how we approached security and multi-form design, feel free to reach out or try the live demo.",
+      "details": {
+        "type": "EMR System",
+        "projectDate": "2026",
+        "techStack": [
+          "NextJS",
+          "TypeScript",
+          "TailwindCSS",
+          "NodeJS",
+          "PostgreSQL",
+          "Rails",
+          "Cryptography"
+        ]
+      }
+    },
+    {
+      "name": "Moolah",
+      "alias": "moolah",
+      "shortDescription": "A private personal finance ledger for Filipino money life—accounts, budgets, goals, installments, and cashflow in one calm desk you control.",
+      "fullDescription": "Moolah is a personal finance web app built for people who juggle cash, bank accounts, e-wallets, credit cards, and BNPL in the Philippines. Sign in once, keep multiple profiles (personal or side hustle), log spend and income in seconds, watch budgets and savings goals, track debts and receivables, and see what is coming next with bills and installment schedules. No bank logins, no payment rails—just a clear peso desk that stays private and online across devices.",
+      "goalsAndMotivation": {
+        "introduction": "Most people in the PH still bounce between spreadsheets, bank apps, and memory to answer a simple question: can I afford this after rent, cards, and pay-later installments? Wallet apps show one slice; spreadsheets go stale. Moolah aims to be the single online ledger for where money lives and what is coming due.",
+        "goals": [
+          "Give individuals a secure online ledger with auth and sync across devices",
+          "Model real PH money shapes—cash, banks, cards, e-wallets, BNPL, loans—not only a single wallet balance",
+          "Make daily logging fast: expense, income, and transfers with categories and tags",
+          "Surface budgets, savings goals, debts, and installment plans in one calm interface",
+          "Show cashflow and upcoming obligations so decisions are based on the next weeks, not last month's vibes"
+        ],
+        "motivation": "I wanted a finance desk that matches how money actually moves here—peso amounts, mixed accounts, credit and pay-later schedules—without turning into a bank or a group bill-split product. Moolah is built so you can see today's position, log what happened, and plan what is coming next with clarity you own."
+      },
+      "githubUrl": "https://github.com/santos16426/moolah-web",
+      "liveUrl": "https://moolah-kappa.vercel.app/",
+      "_id": "moolah",
+      "image": {
+        "public_id": "moolah",
+        "url": "/projects/Moolah.png"
+      },
+      "gallery": [
+        {
+          "public_id": "moolah-1",
+          "url": "/projects/Moolah.png",
+          "description": "Home — today's position, net worth tiles, cashflow, and recent activity"
+        },
+        {
+          "public_id": "moolah-2",
+          "url": "/projects/moolah-gallery1.png",
+          "description": "Sign in — private ledger access with a calm welcome desk"
+        },
+        {
+          "public_id": "moolah-3",
+          "url": "/projects/moolah-gallery2.png",
+          "description": "Accounts — cash, banks, wallets, cards, and loans at a glance"
+        },
+        {
+          "public_id": "moolah-4",
+          "url": "/projects/moolah-gallery3.png",
+          "description": "Activity — filterable transactions with quick Log money"
+        },
+        {
+          "public_id": "moolah-5",
+          "url": "/projects/moolah-gallery4.png",
+          "description": "Budgets — category progress and savings goals for the month"
+        },
+        {
+          "public_id": "moolah-6",
+          "url": "/projects/moolah-gallery5.png",
+          "description": "Coming up — bills, installments, and near-term cashflow forecast"
+        }
+      ],
+      "features": [
+        "Secure sign-up and sign-in with session cookies and private online sync",
+        "Profiles for personal books or a separate side-hustle ledger",
+        "Accounts for cash, banks, e-wallets, credit cards, BNPL, investments, and loans",
+        "Fast expense, income, and transfer logging with categories, subcategories, and tags",
+        "Budgets by category with clear progress against monthly limits",
+        "Savings goals with contribute and withdraw flows",
+        "Debts and receivables tracking alongside credit and BNPL installment schedules",
+        "Cashflow-oriented views for upcoming bills and obligations",
+        "Reports-ready ledger foundation with export-friendly data model",
+        "Calm light UI with responsive layout for desk and mobile web"
+      ],
+      "challenges": [
+        "Modeling mixed Philippine money shapes—cash, cards, e-wallets, and pay-later—without collapsing everything into one wallet balance required a careful account and ledger design so transfers stay balanced and reports stay honest.",
+        "Keeping auth secure across a separate API host and a Vercel frontend meant solving cross-site session cookies; we settled on a same-origin proxy so sessions stay first-party while the API remains on its own service.",
+        "Field-level encryption for sensitive values at rest had to stay usable day to day—key management and stable secrets matter, because rotating the encryption key without a migration path would make existing ciphertext unreadable.",
+        "Rate limiting and CSRF defenses for cookie-authenticated browsers needed production defaults (proxy trust, origin allowlists, and auth route limits) that still feel fine on a single-node deploy.",
+        "Drawing a hard product boundary against group bill-splitting kept scope honest: Moolah is a personal ledger, not a barkada settle-up app, so features had to reinforce individual books and installments instead of multi-person splits."
+      ],
+      "highlights": [
+        "PH-first peso desk with installments and cashflow in mind",
+        "Dedicated Fastify API + PostgreSQL ledger—no direct browser-to-database in production target",
+        "Live web app with online auth and sync",
+        "Budgets, goals, debts, and activity in one product surface"
+      ],
+      "outro": "Moolah is the finance desk I wanted for everyday Philippine money life—clear balances, fast logging, and a honest view of what is coming due. It is still growing, but the core ledger already supports dogfooding accounts, activity, budgets, and planning views.\n\nIf you manage cash and cards across more than one account and want a private online ledger, try the live app or reach out.",
+      "details": {
+        "type": "Personal finance web app",
+        "projectDate": "2026",
+        "techStack": [
+          "NextJS",
+          "TypeScript",
+          "TailwindCSS",
+          "Framer Motion",
+          "Fastify",
+          "PostgreSQL",
+          "Prisma",
+          "Redis"
+        ]
+      },
+      "disabled": false
+    },
+    {
       "name": "Planera",
       "alias": "planera",
       "shortDescription": "Event websites for Filipino celebrations—templates, a real builder, guest RSVP, gift wishlist, and an organizer HQ in one calm link.",
@@ -385,101 +579,86 @@
       }
     },
     {
-      "name": "EMR System",
-      "alias": "emr-system",
-      "shortDescription": "A modern electronic medical record system that helps clinics manage patients, appointments, and care—all in one secure place.",
-      "fullDescription": "The EMR System is a web-based electronic medical record platform built for healthcare providers and clinics. It streamlines daily workflows by centralizing patient information, scheduling, and clinical notes in a single, secure application—so staff can focus on patient care instead of paperwork.",
+      "name": "Split Bill App",
+      "alias": "split-bill-app",
+      "shortDescription": "Split bills with friends, track expenses, and settle up. A simple, fair, and hassle-free bill splitting application with smart receipt scanning and flexible splitting options.",
+      "fullDescription": "Ambag (Split Bill App) is a modern web application designed to make bill splitting effortless and transparent. Whether you're dining out with friends, splitting rent with roommates, or managing group expenses, Ambag simplifies the process with intelligent features like OCR receipt scanning, flexible splitting options, and automatic calculations.",
       "goalsAndMotivation": {
-        "introduction": "Clinics and small practices often juggle paper charts, spreadsheets, and scattered tools—which makes it harder to give patients the attention they deserve. This project aimed to build an EMR that feels straightforward for staff while keeping patient data safe and organized.",
+        "introduction": "Bill splitting can be awkward and time-consuming. Ambag was created to eliminate the stress and complexity around splitting expenses with friends, family, and colleagues.",
         "goals": [
-          "Centralize patient records, appointments, and clinical notes in one secure platform",
-          "Provide an intuitive interface so staff can find information quickly without lengthy training",
-          "Support appointment scheduling and reminders to reduce no-shows and double-booking",
-          "Ensure data privacy and security with proper authentication and access controls",
-          "Make the system accessible from the web so clinics can work from any device"
+          "Create an intuitive bill splitting experience that anyone can use",
+          "Implement OCR technology for instant receipt processing",
+          "Provide flexible splitting options (evenly, by share, by role, exact amount, custom)",
+          "Build transparent expense tracking for groups",
+          "Enable seamless settlement between group members"
         ],
-        "motivation": "I wanted to create an EMR that actually fits how small clinics work—affordable, easy to adopt, and focused on the day-to-day tasks that matter most. The goal was to help healthcare providers spend less time on admin and more time with their patients."
+        "motivation": "As someone who frequently dines out and travels with friends, I experienced firsthand how bill splitting can create awkward situations. Ambag was built to solve this real-world problem by combining modern web technologies with user-friendly design, making financial transparency and fairness effortless."
       },
       "githubUrl": "",
-      "liveUrl": "https://konsultech.app/",
-      "_id": "emr-system",
+      "liveUrl": "https://ambag.joelucas.dev/",
+      "_id": "split-bill-app",
       "image": {
-        "public_id": "emr-system",
-        "url": "/projects/EMR.png"
+        "public_id": "split-bill-app",
+        "url": "/projects/BudgetTracker.png"
       },
       "gallery": [
         {
-          "public_id": "emr-system-1",
-          "url": "/projects/EMR.png",
-          "description": "Landing page of the EMR System"
+          "public_id": "split-bill-app-1",
+          "url": "/projects/BudgetTracker.png",
+          "description": "Marketing page with featured properties and search functionality"
         },
         {
-          "public_id": "emr-system-2",
-          "url": "/projects/emr-gallery1.png",
-          "description": "Features of the EMR System"
+          "public_id": "split-bill-app-2",
+          "url": "/projects/bill1.png",
+          "description": "Dashboard showing group expenses and bill splitting interface"
         },
         {
-          "public_id": "emr-system-3",
-          "url": "/projects/emr-gallery2.png",
-          "description": "Data Privacy and Security of the EMR System"
+          "public_id": "split-bill-app-3",
+          "url": "/projects/bill2.png",
+          "description": "Group page details showing members and expenses"
         },
         {
-          "public_id": "emr-system-4",
-          "url": "/projects/emr-gallery3.png",
-          "description": "Login page of the EMR System"
+          "public_id": "split-bill-app-4",
+          "url": "/projects/bill3.png",
+          "description": "Expense form, add new expense, split bill options"
         },
         {
-          "public_id": "emr-system-5",
-          "url": "/projects/emr-gallery4.png",
-          "description": "Signup/Register page of the EMR System"
-        },
-        {
-          "public_id": "emr-system-6",
-          "url": "/projects/emr-gallery5.png",
-          "description": "Appointment page of the EMR System"
+          "public_id": "split-bill-app-4",
+          "url": "/projects/bill5.png",
+          "description": "Add settlement details, confirm settlement"
         }
       ],
       "features": [
-        "Patient management—store and search patient profiles, contact details, and medical history in one place",
-        "Appointment scheduling—book, view, and manage appointments with a clear calendar view to avoid conflicts",
-        "Secure authentication—login and registration with role-based access so only authorized staff see sensitive data",
-        "Data privacy and security—encryption and access controls to protect patient information and meet privacy expectations",
-        "Web-based access—use the system from any device with a browser, no heavy installs or IT setup",
-        "Clean, focused UI—screens designed around common tasks so staff can work quickly without getting lost",
-        "HIPAA compliant—built with safeguards and practices that support compliance with healthcare privacy and security requirements",
-        "Mobile web ready—responsive layout so staff can check schedules and key info on phones and tablets when away from the desk",
-        "Multiple consultation forms—create and use different form templates for various visit types and specialties"
+        "Smart receipt scanning with OCR technology",
+        "Flexible bill splitting options (evenly, by share, by role, exact amount, custom)",
+        "Group expense tracking and management",
+        "Automatic calculation and settlement",
+        "Real-time expense updates",
+        "User-friendly interface for seamless experience"
       ],
       "challenges": [
-        "Encrypting patient records end-to-end while keeping the app usable required choosing the right approach—I implemented encryption for sensitive fields and ensured keys and data handling align with HIPAA expectations so records stay protected without slowing down daily workflows.",
-        "Securing data at rest meant designing how data is stored in the database and in any file storage—encryption at rest, access controls, and audit trails were implemented so that even if storage is accessed, patient data remains protected and traceable.",
-        "Building complex multi-step and multi-form consultation flows was tricky—different visit types needed different fields and validation. I structured reusable form components and state so clinics can maintain several form types without duplicating logic or sacrificing validation.",
-        "Session handling had to balance security and usability—short timeouts and secure cookie settings reduce risk, while clear session refresh and login persistence keep staff from being logged out mid-task. I focused on secure token handling and session invalidation on logout.",
-        "File upload and security required validating file types, size limits, and scanning for malicious content before storing—uploads are isolated, access-controlled, and tied to the right patient and user so only authorized staff can view or download attachments.",
-        "Implementing RBAC for assigning staff and secretaries meant defining clear roles (e.g. doctor, secretary, admin) and permissions—who can view or edit what, and who can assign or manage other users. I built role checks into the API and UI so access stays consistent and auditable."
+        "Implementing accurate OCR receipt scanning required careful integration of image processing libraries and handling various receipt formats. I focused on creating a robust scanning system that could handle different image qualities and receipt layouts while maintaining accuracy.",
+        "Building flexible splitting logic that supports multiple splitting methods (evenly, by share, by role, exact amounts, and custom) was complex. I designed a modular system that could handle edge cases while keeping the user experience simple and intuitive."
       ],
       "highlights": [
-        "Printable prescriptions—generate and print prescriptions directly from the system for patients to take to the pharmacy",
-        "Lab request forms—create and print lab request slips so doctors can order tests and track results in one place",
-        "Medical certificate and clearance—issue and print medical certificates and clearances with clinic branding and doctor signature",
-        "Appointment management—full scheduling: book, reschedule, cancel, and view appointments with conflict prevention and a clear calendar",
-        "Multiple forms for doctors—support a variety of consultation and clinical forms so different specialties and visit types are covered",
-        "Staff and secretary assignment—assign and manage staff/secretary roles with RBAC so the right people have the right access (scheduling, records, forms)"
+        "Instant receipt processing with OCR technology",
+        "Multiple splitting options for different scenarios",
+        "Transparent expense tracking for groups",
+        "Clean and intuitive user interface",
+        "Responsive design for mobile and desktop"
       ],
-      "outro": "The EMR System shows how a well-structured web app can support real clinical workflows—from prescriptions and lab requests to certificates and appointments—without getting in the way. Tackling encryption, data-at-rest security, RBAC, and flexible forms reinforced how much thought goes into building something that is both usable and trustworthy for healthcare.\n\nIf you run a clinic or are curious how we approached security and multi-form design, feel free to reach out or try the live demo.",
+      "outro": "Ambag demonstrates how modern web technologies can solve everyday problems. The combination of OCR technology, flexible splitting algorithms, and user-centered design creates an application that genuinely improves how people handle shared expenses.\n\nThe project showcases the importance of understanding real-world user pain points and building solutions that are both powerful and easy to use.",
       "details": {
-        "type": "EMR System",
+        "type": "Web Application",
         "projectDate": "2026",
         "techStack": [
           "NextJS",
           "TypeScript",
           "TailwindCSS",
-          "NodeJS",
-          "PostgreSQL",
-          "Rails",
-          "Cryptography"
+          "OCR Technology"
         ]
-      }
+      },
+      "disabled": false
     },
     {
       "name": "Construction Firm",
@@ -631,88 +810,6 @@
           "NodeJS"
         ]
       }
-    },
-    {
-      "name": "Split Bill App",
-      "alias": "split-bill-app",
-      "shortDescription": "Split bills with friends, track expenses, and settle up. A simple, fair, and hassle-free bill splitting application with smart receipt scanning and flexible splitting options.",
-      "fullDescription": "Ambag (Split Bill App) is a modern web application designed to make bill splitting effortless and transparent. Whether you're dining out with friends, splitting rent with roommates, or managing group expenses, Ambag simplifies the process with intelligent features like OCR receipt scanning, flexible splitting options, and automatic calculations.",
-      "goalsAndMotivation": {
-        "introduction": "Bill splitting can be awkward and time-consuming. Ambag was created to eliminate the stress and complexity around splitting expenses with friends, family, and colleagues.",
-        "goals": [
-          "Create an intuitive bill splitting experience that anyone can use",
-          "Implement OCR technology for instant receipt processing",
-          "Provide flexible splitting options (evenly, by share, by role, exact amount, custom)",
-          "Build transparent expense tracking for groups",
-          "Enable seamless settlement between group members"
-        ],
-        "motivation": "As someone who frequently dines out and travels with friends, I experienced firsthand how bill splitting can create awkward situations. Ambag was built to solve this real-world problem by combining modern web technologies with user-friendly design, making financial transparency and fairness effortless."
-      },
-      "githubUrl": "",
-      "liveUrl": "https://ambag.joelucas.dev/",
-      "_id": "split-bill-app",
-      "image": {
-        "public_id": "split-bill-app",
-        "url": "/projects/BudgetTracker.png"
-      },
-      "gallery": [
-        {
-          "public_id": "split-bill-app-1",
-          "url": "/projects/BudgetTracker.png",
-          "description": "Marketing page with featured properties and search functionality"
-        },
-        {
-          "public_id": "split-bill-app-2",
-          "url": "/projects/bill1.png",
-          "description": "Dashboard showing group expenses and bill splitting interface"
-        },
-        {
-          "public_id": "split-bill-app-3",
-          "url": "/projects/bill2.png",
-          "description": "Group page details showing members and expenses"
-        },
-        {
-          "public_id": "split-bill-app-4",
-          "url": "/projects/bill3.png",
-          "description": "Expense form, add new expense, split bill options"
-        },
-        {
-          "public_id": "split-bill-app-4",
-          "url": "/projects/bill5.png",
-          "description": "Add settlement details, confirm settlement"
-        }
-      ],
-      "features": [
-        "Smart receipt scanning with OCR technology",
-        "Flexible bill splitting options (evenly, by share, by role, exact amount, custom)",
-        "Group expense tracking and management",
-        "Automatic calculation and settlement",
-        "Real-time expense updates",
-        "User-friendly interface for seamless experience"
-      ],
-      "challenges": [
-        "Implementing accurate OCR receipt scanning required careful integration of image processing libraries and handling various receipt formats. I focused on creating a robust scanning system that could handle different image qualities and receipt layouts while maintaining accuracy.",
-        "Building flexible splitting logic that supports multiple splitting methods (evenly, by share, by role, exact amounts, and custom) was complex. I designed a modular system that could handle edge cases while keeping the user experience simple and intuitive."
-      ],
-      "highlights": [
-        "Instant receipt processing with OCR technology",
-        "Multiple splitting options for different scenarios",
-        "Transparent expense tracking for groups",
-        "Clean and intuitive user interface",
-        "Responsive design for mobile and desktop"
-      ],
-      "outro": "Ambag demonstrates how modern web technologies can solve everyday problems. The combination of OCR technology, flexible splitting algorithms, and user-centered design creates an application that genuinely improves how people handle shared expenses.\n\nThe project showcases the importance of understanding real-world user pain points and building solutions that are both powerful and easy to use.",
-      "details": {
-        "type": "Web Application",
-        "projectDate": "2026",
-        "techStack": [
-          "NextJS",
-          "TypeScript",
-          "TailwindCSS",
-          "OCR Technology"
-        ]
-      },
-      "disabled": false
     },
     {
       "name": "Real Estate",
